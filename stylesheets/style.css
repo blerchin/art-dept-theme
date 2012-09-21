@@ -1,0 +1,132 @@
+
+h3, lh {
+	font-family: "futura-pt",sans-serif;
+	font-size: 28px;
+	font-weight: 500;
+	line-height: 24px;
+	padding-bottom: 4px;
+	margin-bottom: 4px;
+	border-bottom: 0px dashed #000;
+
+}
+h4 {
+	font-family: "p22-underground",sans-serif;
+	font-weight: 100;
+	font-size: 20px;
+	line-height: 22px;	
+}
+
+p {
+	font-family: Arial, sans-serif;
+}
+a {
+	text-decoration: none;
+}
+
+header.masthead {
+	position: relative;
+	width: 100%;
+	padding: 20px 10px 10px 10px;
+	margin-bottom: 20px;
+	}
+header.masthead h1 {
+	font-family: 'futura-pt', sans-serif;
+	font-weight: 700;
+	font-size: 50px;
+	color: #68c;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+header h1 span.primary {
+	font-weight: 400;
+	}
+
+.container div.nav.four.columns {
+	margin-bottom: 60px;
+	width: 218px;
+}
+.container div.nav.list.four.columns {
+	border-right: 0px dashed #000;
+}
+
+.nav.item {
+	padding-bottom: 22px;
+	min-height: 70px;
+}
+
+.nav.list lh.nav.item.head {
+	display:block;
+	padding-bottom:6px;
+}
+
+.nav.item {
+	font-size: 24px;
+	line-height: 24px;
+	letter-spacing: 0px;
+	padding-right: 10px;
+	text-decoration: none; 
+	float: none;
+}
+
+li.nav.item.list {
+	font-family: "p22-underground", sans-serif;
+	font-style: normal;
+	font-weight: 100;
+	text-transform: uppercase;
+}
+
+li.nav.item.list {
+	display:block;
+}
+
+li.nav.item a {
+	display:inline;
+	min-height: 20px;
+}
+
+.nav.item a:hover {
+	background-color: #ccc;
+}
+
+
+div.slider {
+	overflow: hidden;
+	min-height: 150px;
+	max-height: 200px;
+	margin-left: 40px; 
+}
+div.slider .img-wrap {
+	height:100%;
+	width: 33%; 
+	overflow: hidden;
+}
+div.slider li {
+	margin-bottom: 4px;
+}
+div.slider.nav {
+	margin: 0;
+	padding:0;
+}
+div.slider.nav.buttons {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	width: 40px;
+	height: 20px;
+	min-height: 20px;
+	background-repeat:none;
+}
+div.arrow {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	float: left;
+	background-image: url("../images/arrows.png");
+}
+div.arrow.left {
+	background-position: 0 0;
+}
+div.arrow.right {
+	background-position: 20px 0px;
+}
