@@ -1,6 +1,6 @@
 $(document).ready( function(){
-	$('li.nav.list.item a').lettering();
-	setupVerticalSlider('.slider.feed');
+	//$('li.nav.list.item a').lettering();
+	//setupVerticalSlider('.slider.feed');
 
 	
 });

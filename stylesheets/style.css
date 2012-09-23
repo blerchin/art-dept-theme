@@ -43,8 +43,7 @@ a {
 
 
 .container {
-	overflow-x:hidden;
-	overflow-y:scroll;
+
 }
 
 header.masthead {
@@ -106,14 +105,15 @@ li.nav.list.item span {
 
 li.nav.list.item:hover {
 	padding-right: 0;
+	font-size: 26px;
 }
-
+/*
 li.nav.list.item:hover span.char1 {
 	display:block;
 	float:left;
 	font-size: 50px;
 }
-
+*/
 li.nav.item.list {
 	display:block;
 }
@@ -135,6 +135,7 @@ li.nav.item a {
 	overflow-y: scroll;
 	height: 700px;
 	position: relative;
+	
 }
 .slider {
 	overflow: hidden;
@@ -143,6 +144,7 @@ li.nav.item a {
 }
 .slider.item {
 	min-height: 700px;
+	position: relative;
 }
 .slider .img-wrap {
 	height:100%;
@@ -171,6 +173,40 @@ li.nav.item a {
 	min-height: 20px;
 	background-repeat:none;
 }
+
+h5.blockquote {
+	margin-top: 50px;
+	margin-left: 50px;
+	font-size: 20px;
+	line-height: 22px;
+	font-weight: 100;
+	font-style: normal;
+	color: #333;
+	word-spacing: 1px;
+	background-color: #fff;
+	padding: 5px;
+	display: block;
+
+}
+h5.blockquote em {
+	display:block;
+	float: left;
+	width: 150px;
+	font-weight: 500;
+	font-size: 26px;
+	font-style: normal;
+	padding-top: 5px;
+	padding-right: 25px;
+	padding-bottom: 5;
+	line-height: 30px
+
+}
+/*
+h5.blockquote em:first-letter {
+	display: block;
+	float: left;
+	font-size: 50px;
+}*/
 .arrow {
 	width: 20px;
 	height: 20px;
