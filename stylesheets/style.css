@@ -18,7 +18,7 @@ h4, lh {
 	font-size: 20px;
 	font-weight: 500;
 	line-height: 20px;
-	color: #888;
+	color: #333;
 	padding: 4px 0px;
 	margin-bottom: 4px;
 	border-bottom: 0px dashed #000;
@@ -26,10 +26,10 @@ h4, lh {
 }
 h5 {
 	font-family: "p22-underground",sans-serif;
-	font-weight: 100;
+	font-weight: 300;
 	font-size: 18px;
 	line-height: 20px;
-	color: #888;	
+	color: #333;	
 }
 
 p {
@@ -86,7 +86,7 @@ header h1 span.primary {
 .nav.item {
 	font-size: 22px;
 	line-height: 30px;
-	letter-spacing: 7px;
+	letter-spacing: 3px;
 	padding-right: 20px;
 	text-decoration: none; 
 	float: none;
@@ -95,7 +95,7 @@ header h1 span.primary {
 li.nav.item.list {
 	font-family: "p22-underground", sans-serif;
 	font-style: normal;
-	font-weight: 100;
+	font-weight: 300;
 	text-transform: uppercase;
 }
 li.nav.list.item span {
@@ -116,10 +116,12 @@ li.nav.list.item:hover span.char1 {
 */
 li.nav.item.list {
 	display:block;
+	border-bottom: 1px dashed #ccc;
+
 }
 
 li.nav.item a {
-	font-weight: 100;
+	font-weight: 300;
 	display:inline;
 	min-height: 20px;
 }
@@ -151,14 +153,16 @@ li.nav.item a {
 	overflow: hidden;
 	max-height: 400px;
 }
-.slider.element {
-	
-}
 .slider li {
 	margin-bottom: 4px;
 }
 .slider hr {
 	margin: 10px 0;
+}
+header.slider {
+	padding: 10px 0;
+	border-top: 1px dashed #ccc;
+	border-bottom: 1px dashed #ccc;
 }
 .slider.nav {
 	margin: 0;
@@ -179,34 +183,26 @@ h5.blockquote {
 	margin-left: 50px;
 	font-size: 20px;
 	line-height: 22px;
-	font-weight: 100;
 	font-style: normal;
 	color: #333;
 	word-spacing: 1px;
 	background-color: #fff;
-	padding: 5px;
+	padding: 15px 10px 20px 10px;
 	display: block;
+	border: 1px dashed #ccc;
 
 }
-h5.blockquote em {
-	display:block;
-	float: left;
-	width: 150px;
-	font-weight: 500;
-	font-size: 26px;
-	font-style: normal;
-	padding-top: 5px;
-	padding-right: 25px;
-	padding-bottom: 5;
-	line-height: 30px
 
-}
-/*
-h5.blockquote em:first-letter {
+h5.blockquote:first-letter {
 	display: block;
 	float: left;
-	font-size: 50px;
-}*/
+	font-size: 70px;
+	line-height: 65px;
+	font-weight: 700;
+	padding-bottom: 0px;
+	padding-right: 7px;
+	margin:0;
+}
 .arrow {
 	width: 20px;
 	height: 20px;

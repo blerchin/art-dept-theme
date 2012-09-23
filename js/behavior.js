@@ -1,9 +1,11 @@
 $(document).ready( function(){
 	//$('li.nav.list.item a').lettering();
-	//setupVerticalSlider('.slider.feed');
+	setupVerticalSlider('.slider.feed');
 
 	
 });
+
+
 
 function setupVerticalSlider( container ) {
 	var elementToScroll = $(container);
@@ -11,15 +13,42 @@ function setupVerticalSlider( container ) {
 		var fi = 0;
 		
 		var scrollInterval;
-		SetScrollIntervalAction();
+		//SetScrollIntervalAction();
 		
 		elementToScroll.mouseenter( function(){
-			clearInterval(scrollInterval);
+			//clearInterval(scrollInterval);
 		});
 		
 		elementToScroll.mouseleave( function(){
-			SetScrollIntervalAction();	
+			//SetScrollIntervalAction();	
 		});
+	
+	function scrollToNthElement( n ) {
+	elementToScroll.scrollTo(feedItems[fi], 500, {
+							  "axis":"y",
+							  "easing": "swing"
+							  });	
+							  }
+		
+		$(window).keydown( function(e) {
+			if (e.which == 39 || e.which == 37) {
+				console.log(e.which);
+				switch( e.which) {
+
+				case 37 : 
+					fi > 0 ? fi-- : fi=fi;
+					scrollToNthElement( fi );
+					break;
+				case 39 :
+					fi <= elementToScroll.length ? fi++ : fi;
+					scrollToNthElement( fi );
+					break;
+				}
+			}
+			
+		});
+
+		
 		function SetScrollIntervalAction(){
 			scrollInterval = setInterval(function() {
 					
@@ -28,11 +57,10 @@ function setupVerticalSlider( container ) {
 			  } else {
 				  fi = 0;
 			  }
-			  elementToScroll.scrollTo(feedItems[fi], 500, {
-									  "axis":"y",
-									  "easing": "swing"
-									  });	
+			  	scrollToNthElement( fi );
+			  	
 			}, 15000);
 		}
+		
 }
 
