@@ -24,9 +24,9 @@ h2 {
 	
 h3 { 
 	font-family: "p22-underground", sans-serif;
-	font-weight: 300;
-	font-size: 24px;
-	line-height:24px;
+	font-weight: 500;
+	font-size: 20px;
+	line-height:20px;
 
 }
 h4, lh {
@@ -74,10 +74,9 @@ a.image.wrap.w img {
 }
 header.masthead {
 	position: relative;
-	width: 100%;
-	padding: 50px 10px 0px 10px;
-	background-color: #fff;
-	z-index: 11;
+	margin: 50px 10px 10px 10px;
+	padding-bottom: 0px;
+	background-color: #ffe5aa;
 	}
 header.masthead h1 {
 	font-family: 'futura-pt', sans-serif;
@@ -85,19 +84,19 @@ header.masthead h1 {
 	font-size: 50px;
 	color: #68c;
 	padding-bottom: 0px;
-	margin-bottom: 0px;
-	line-height: 70px;
+	margin: 5px 0px 0px 0px;
+	line-height: 60px;
 }
 
 header h1 span.primary {
 	font-weight: 400;
-	color: #ccc;
+	
 	}
  
 
 div.nav.grid{
 	margin-top: 0px;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 	height: 45%;
 	
 }
@@ -123,7 +122,7 @@ li.nav.item {
 	float: none;
 	font-family: "p22-underground", sans-serif;
 	font-style: normal;
-	font-weight: 300;
+	font-weight: 500;
 }
 li.nav.list.item {
 	text-transform: lowercase;
@@ -138,7 +137,11 @@ li.nav.list.item ul li.nav.list.item {
 	margin-bottom: 1px;
 }
 li.nav.list.item ul li.nav.list.item:after {
-	content:".";
+	color: #ccc;
+	content:"|";
+}
+li.nav.list.item ul li.nav.list.item:last-child:after {
+	content:none;
 }
 li.nav.list:nth-child(1) a, li.nav.list:nth-child(1) ul li.nav.list a{
 	color: #dda040;
@@ -200,7 +203,7 @@ li.nav.item.grid a span {
 	border-bottom: 2px #ccc solid;
 	font-size: 18px;
 	font-weight: 500;
-	margin: 10px 5px 5px 0;
+	margin: 10px 5px 10px 0;
 	text-transform: uppercase;
 }
 .slider.item p {
