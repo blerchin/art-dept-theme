@@ -14,10 +14,17 @@ body {
 	height:100%;
 	overflow:visible;
 }
+h2 {
+	font-family: "p22-underground",Arial,sans-serif;
+	font-size: 28px;
+	font-weight: 500;
+	margin-top: 0px;
+	padding-top: 0px;
+}
 	
 h3 { 
 	font-family: "p22-underground", sans-serif;
-	font-weight: 500;
+	font-weight: 300;
 	font-size: 24px;
 	line-height:24px;
 
@@ -40,20 +47,31 @@ h5 {
 	line-height: 20px;
 	color: #333;	
 }
+header {
+	font-family: "p22-underground",sans-serif;
+	font-weight: 500;
+}
 
 p {
 	font-family: Arial, sans-serif;
-	color: #888;
+	color: #333;
 }
 a {
 	text-decoration: none;
 	color: #000;
 }
-
+a.image.wrap {
+	display: block;
+	overflow: hidden;
+}
+a.image.wrap img {
+	height: 100%;
+	width:auto;
+}
 header.masthead {
 	position: relative;
 	width: 100%;
-	padding: 20px 10px 0px 10px;
+	padding: 50px 10px 0px 10px;
 	background-color: #fff;
 	z-index: 11;
 	}
@@ -73,16 +91,22 @@ header h1 span.primary {
 	}
  
 
-div.nav.list{
+div.nav.grid{
 	margin-top: 0px;
+	margin-bottom: 10px;
 	height: 45%;
+	
 }
-.nav.list lh.nav.item.head {
+.nav.grid lh.nav.item.head {
 	display:block;
 	padding-bottom:6px;
 }
-.nav.list ul{
+.nav.grid ul{
 	height: 100%;
+}
+div.nav.list {
+	padding: 10px 0;
+	background-color: #e0ddff;
 }
 li.nav.item {
 	position:relative;
@@ -132,7 +156,6 @@ li.nav.grid.item {
 	background-color: #bbb;
 	margin-bottom: 5px;
 }
-li.nav.list
 
 li.nav.item a {
 	font-weight: 300;
@@ -149,15 +172,30 @@ li.nav.item.grid a {
 	right: 10px;
 	bottom: 0px;
 }
-
-.slider.feed{
-	overflow-x: hidden;
-	overflow-y: scroll;
-	height: 700px;
-	position: relative;
-	
+.slider {
+	background-color: #f0ddfa;
 }
-
+.slider.item > * {
+	margin-left: 0px;
+}
+.slider header {
+	border-bottom: 2px #ccc solid;
+	font-size: 18px;
+	font-weight: 500;
+	margin: 10px 5px 5px 0;
+	text-transform: uppercase;
+}
+.slider.item p {
+	margin: 0 10px;
+}
+.slider.item p:after {
+	content: "...";
+	}
+.slider.item a.image.wrap {
+	height: 200px;
+	float:left;
+	margin-right: 20px;
+}
 
 h5.blockquote {
 	margin-top: 50px;
