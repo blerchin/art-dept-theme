@@ -24,20 +24,30 @@ $(window).ready( function(){
 	scale.x = (gc.mSize.w - scale.bb.width) / 2;
 	scale.y = (gc.mSize.h - scale.bb.height) / 2
 	
-	boxes.transform("t"+scale.x+","+scale.y+"s"+(scale.w+.98) +","+(scale.h+.98)+","+scale.bb.width/2+","+scale.bb.height/2);
-	console.log(boxes);
-	var theClipPath=document.createElementNS(svg,"clipPath");
-		theClipPath.setAttribute("id","win"+boxes[0].id);
-		console.log(theClipPath);
-		grid_el.appendChild(theClipPath);
-		theClipPath.appendChild(boxes[0].node);
-	var theImg = grid.image("images/fouts/a.png",boxes[0].getBBox().x,boxes[0].getBBox().y,boxes[0].getBBox().width,boxes[0].getBBox().height);
-	theImg.node.setAttribute("clip-path","url(#win0)");
-	
+	boxes.transform("t"+scale.x+","+scale.y+"s"+(scale.w+.98) +","+(scale.h+.95)+","+scale.bb.width/2+","+scale.bb.height/2);
+	boxes.forEach( function(b,i) {
+		var theClipPath=document.createElementNS(svg,"clipPath");
+			theClipPath.setAttribute("id","win"+i);
+			console.log(theClipPath);
+			grid_el.appendChild(theClipPath);
+			theClipPath.appendChild(b.node);
+		var bb = b.getBBox();
+		console.log(bb);
+		var theImg = grid.image(images_loc[i],bb.x,bb.y-100,bb.width,bb.height+200);
+		theImg.node.setAttribute("preserveAspectRatio", "xMinYMid");
+		theImg.node.setAttribute("clip-path","url(#win"+i+")");
+	});
 });
 
 
-
+var images_loc = [ 
+	"images/fouts/a.png",
+	"images/fouts/b.png",
+	"images/fouts/c.png",
+	"images/fouts/d.png",
+	"images/fouts/e.png",
+	"images/fouts/a.png",
+]
 var window_paths = [
 	"M263.09,168.128C178.443,168.095,93.795,168.061,9.148,168c0-52.333,0-104.667,0-157c84.542,6.535,169.184,11.029,253.942,13.468C263.09,72.354,263.09,120.242,263.09,168.128z",
 	"M263.09,314.531C178.332,316.979,93.69,321.465,9.148,328c0-50,0.003-100,0-150c84.647-0.349,169.295-0.596,253.943-0.724C263.09,223.028,263.09,268.779,263.09,314.531z",
