@@ -2,13 +2,23 @@ var svg = "http://www.w3.org/2000/svg";
 
 $(window).ready( function(){
 	var gc = $('div.grid').get()[0];
-	console.log(gc);
+
+	var grid_images = [];
+	$('li.nav.grid.item a').get().forEach(function(o,i){
+			grid_images.push({
+				src: o.getElementsByTagName('img')[0].getAttribute('src'),
+				href: o.getAttribute('href'),
+				text: o.textContent,
+				});
+				
+
+		});
+	console.log(grid_images );
 	$(gc).empty();
 	gc.mSize = { w: $(gc).width(), h: $(gc).height() };
 	var grid = Raphael(gc, gc.mSize.w, gc.mSize.h );
 	var grid_el = gc.getElementsByTagName('svg')[0];
 	console.log(grid);
-	//$(gc).append(grid);
 	var boxes = grid.set();
 	window_paths.forEach(function(i){
 		var win = boxes.push( grid.path(i));
@@ -24,30 +34,43 @@ $(window).ready( function(){
 	scale.x = (gc.mSize.w - scale.bb.width) / 2;
 	scale.y = (gc.mSize.h - scale.bb.height) / 2
 	
-	boxes.transform("t"+scale.x+","+scale.y+"s"+(scale.w+.98) +","+(scale.h+.95)+","+scale.bb.width/2+","+scale.bb.height/2);
-	boxes.forEach( function(b,i) {
-		var theClipPath=document.createElementNS(svg,"clipPath");
-			theClipPath.setAttribute("id","win"+i);
-			console.log(theClipPath);
-			grid_el.appendChild(theClipPath);
-			theClipPath.appendChild(b.node);
-		var bb = b.getBBox();
-		console.log(bb);
-		var theImg = grid.image(images_loc[i],bb.x,bb.y-100,bb.width,bb.height+200);
-		theImg.node.setAttribute("preserveAspectRatio", "xMinYMid");
-		theImg.node.setAttribute("clip-path","url(#win"+i+")");
+	boxes.transform("s"+(scale.w+1) +","+(scale.h+1)+","+0+","+0);
+	grid_images.forEach( function(img,i) {
+		var g = document.createElementNS(svg,"g");
+			g.setAttribute('id','win'+i);
+			g.setAttribute('class','nav grid image');
+			grid_el.appendChild( g );
+		var cp=document.createElementNS(svg,"clipPath");
+			cp.setAttribute("id","win"+i);
+			g.appendChild(cp);
+			cp.appendChild(boxes[i].node);
+		var bb = boxes[i].getBBox();
+		var img_el = grid.image(img.src,bb.x,bb.y-100,bb.width,bb.height+200);
+			g.appendChild(img_el.node);
+			img_el.node.setAttribute("preserveAspectRatio", "xMinYMid");
+			img_el.node.setAttribute("clip-path","url('#win"+i+"')");
+		var label = grid.text(bb.x+(bb.width/2), bb.y+bb.height-20, img.text);
+			label.attr('class','label');
+			var labelPos = "bottom";
+			g.appendChild(label.node);
+			if( label.getBBox().y > grid.height/2 ) {
+				label.attr('y',bb.y+20); 
+				labelPos = "top";
+			}
+			lbb = label.getBBox();
+		var labelBG = grid.rect(bb.x, 
+				labelPos == "bottom" ? lbb.y : bb.y,
+				bb.width, 
+				labelPos == "bottom" ? bb.y+bb.height - lbb.y
+					: (lbb.y+lbb.height) - bb.y);
+			labelBG.attr('class','label bg');
+			g.appendChild(labelBG.node);
+			label.toFront();
+
 	});
 });
 
 
-var images_loc = [ 
-	"images/fouts/a.png",
-	"images/fouts/b.png",
-	"images/fouts/c.png",
-	"images/fouts/d.png",
-	"images/fouts/e.png",
-	"images/fouts/a.png",
-]
 var window_paths = [
 	"M263.09,168.128C178.443,168.095,93.795,168.061,9.148,168c0-52.333,0-104.667,0-157c84.542,6.535,169.184,11.029,253.942,13.468C263.09,72.354,263.09,120.242,263.09,168.128z",
 	"M263.09,314.531C178.332,316.979,93.69,321.465,9.148,328c0-50,0.003-100,0-150c84.647-0.349,169.295-0.596,253.943-0.724C263.09,223.028,263.09,268.779,263.09,314.531z",

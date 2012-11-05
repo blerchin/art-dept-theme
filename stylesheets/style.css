@@ -84,7 +84,7 @@ header.masthead h1 {
 	font-size: 50px;
 	color: #68c;
 	padding-bottom: 0px;
-	margin: 5px 0px 0px 0px;
+	margin: 5px 0px 0px 5px;
 	line-height: 60px;
 }
 
@@ -93,10 +93,8 @@ header h1 span.primary {
 	
 	}
  
-
 div.nav.grid{
-	margin-top: 0px;
-	margin-bottom: 5px;
+	margin: 0px 0px 15px 0px;
 	height: 45%;
 	
 }
@@ -107,6 +105,17 @@ div.nav.grid{
 .nav.grid ul{
 	height: 100%;
 }
+.nav.grid svg g.grid.image text tspan {
+	fill: #fff;
+	font-size: 18px;
+	font-weight: bold;
+}
+.nav.grid svg g.grid.image rect {
+	fill: #555;
+	stroke: none;
+	opacity: .7;
+}
+
 div.nav.list {
 	padding: 10px 0;
 	background-color: #dee2ff;
