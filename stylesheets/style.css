@@ -76,6 +76,7 @@ header.masthead {
 	position: relative;
 	margin: 50px 10px 10px 10px;
 	padding-bottom: 0px;
+	border: none;
 /*	background-color: #ffe5aa;*/
 	}
 header.masthead h1 {
@@ -118,13 +119,45 @@ div.nav.grid{
 }
 
 div.nav.list {
-	padding: 10px 0;
-	background-color: #dee2ff;
+	padding-left: 20px;
+	margin-bottom: 20px;
+	position:relative;
+	height: 20px;
+	z-index: 12;
+}
+div.nav.list ul {
+	float:left;
+	display: block;
+	position:relative;
+}
+div.nav.list ul div {
+	width: auto;
+	margin: 0px auto;
+}
+div.nav.list li {
+	float: left;
+	position: relative;
+}
+div.nav.list li ul {
+	position: absolute;
+	top: 40px;
+	left: 0px;
+	float: none;
+	clear: left;
+	display: block;
+	overflow: hidden;
+	height: 0px;
+	padding-top: 10px;
+	background-color: #fff;
+	z-index: 12;
+}
+div.nav.list li:hover ul {
+	height: auto;
 }
 li.nav.item {
 	position:relative;
-	font-size: 18px;
-	line-height: 20px;
+	font-size: 22px;
+	line-height: 24px;
 	letter-spacing: 0px;
 	text-decoration: none; 
 	list-style: none;
@@ -132,24 +165,23 @@ li.nav.item {
 	float: none;
 	font-family: "p22-underground", sans-serif;
 	font-style: normal;
-	font-weight: 500;
+	font-weight: 800;
+	padding: 10px;
 }
 li.nav.list.item {
 	text-transform: lowercase;
 }
 li.nav.list.item ul {
-	margin-left: 20px;
+	margin-left: 0px;
 }
 li.nav.list.item ul li.nav.list.item {
 	font-size: 16px;
-	line-height: 16px;
-	display: inline-block;
-	margin-bottom: 1px;
 }
+/*
 li.nav.list.item ul li.nav.list.item:after {
 	color: #ccc;
 	content:"|";
-}
+}*/
 li.nav.list.item ul li.nav.list.item:last-child:after {
 	content:none;
 }
@@ -204,12 +236,12 @@ li.nav.item.grid a span {
 	left:0px;
 }
 .slider {
-	background-color: #f0ddfa;
+	/*background-color: #f0ddfa;*/
 }
 .slider.item > * {
-	margin-left: 10px;
+	margin-left: 0px;
 }
-.slider header {
+div header {
 	border-bottom: 1px #ccc solid;
 	font-size: 18px;
 	font-weight: 500;
@@ -254,6 +286,8 @@ div.blockquote:first-letter {
 	margin:0;
 	color: #6088b0
 }
+
+
 .arrow {
 	width: 20px;
 	height: 20px;
@@ -266,4 +300,11 @@ div.arrow.left {
 }
 div.arrow.right {
 	background-position: 20px 0px;
+}
+div.footer > span {
+	margin: 0px auto; 
+}
+div.footer span span {
+	color: #666;
+	margin-right: 10px;
 }
