@@ -1,4 +1,5 @@
 var svg = "http://www.w3.org/2000/svg";
+var xlink = "http://www.w3.org/1999/xlink";
 
 $(window).ready( function(){
 	var gc = $('div.grid').get()[0];
@@ -40,32 +41,37 @@ $(window).ready( function(){
 			g.setAttribute('id','win'+i);
 			g.setAttribute('class','nav grid image');
 			grid_el.appendChild( g );
+		var a = document.createElementNS(svg,"a");
+			a.setAttributeNS(xlink,"xlink:href","//");
+			g.appendChild(a);
 		var cp=document.createElementNS(svg,"clipPath");
 			cp.setAttribute("id","win"+i);
-			g.appendChild(cp);
+			a.appendChild(cp);
 			cp.appendChild(boxes[i].node);
 		var bb = boxes[i].getBBox();
 		var img_el = grid.image(img.src,bb.x,bb.y-100,bb.width,bb.height+200);
-			g.appendChild(img_el.node);
+			a.appendChild(img_el.node);
 			img_el.node.setAttribute("preserveAspectRatio", "xMinYMid");
 			img_el.node.setAttribute("clip-path","url('#win"+i+"')");
-		var label = grid.text(bb.x+(bb.width/2), bb.y+bb.height-20, img.text);
+		var label = grid.text(bb.x+(bb.width/2), bb.y+bb.height-10, img.text);
+			console.log(label);
 			label.attr('class','label');
-			var labelPos = "bottom";
-			g.appendChild(label.node);
-			if( label.getBBox().y > grid.height/2 ) {
-				label.attr('y',bb.y+20); 
-				labelPos = "top";
+			var labelPos = "top";
+			a.appendChild(label.node);
+			if( bb.y > grid.height/2 ) {
+				label.attr('y',bb.y+13); 
+				labelPos = "bottom";
 			}
 			lbb = label.getBBox();
 		var labelBG = grid.rect(bb.x, 
-				labelPos == "bottom" ? lbb.y : bb.y,
+				labelPos == "bottom" ? bb.y : lbb.y-3,
 				bb.width, 
-				labelPos == "bottom" ? bb.y+bb.height - lbb.y
-					: (lbb.y+lbb.height) - bb.y);
+				labelPos == "bottom" ? lbb.height +( lbb.y - bb.y) : (bb.y + bb.height + 3) - lbb.y
+				);
 			labelBG.attr('class','label bg');
-			g.appendChild(labelBG.node);
-			label.toFront();
+			a.appendChild(labelBG.node);
+			a.appendChild(label.node);
+			
 
 	});
 });

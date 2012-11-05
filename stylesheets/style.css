@@ -105,13 +105,14 @@ div.nav.grid{
 .nav.grid ul{
 	height: 100%;
 }
-.nav.grid svg g.grid.image text tspan {
-	fill: #fff;
-	font-size: 18px;
-	font-weight: bold;
+.nav.grid svg g.nav.grid a text tspan {
+	fill: #333;
+	font-size: 20px;
+	font-family: "p22-underground", sans-serif;
+	font-weight: 300;
 }
-.nav.grid svg g.grid.image rect {
-	fill: #555;
+.nav.grid svg a rect {
+	fill: #fff;
 	stroke: none;
 	opacity: .7;
 }
@@ -206,10 +207,10 @@ li.nav.item.grid a span {
 	background-color: #f0ddfa;
 }
 .slider.item > * {
-	margin-left: 0px;
+	margin-left: 10px;
 }
 .slider header {
-	border-bottom: 2px #ccc solid;
+	border-bottom: 1px #ccc solid;
 	font-size: 18px;
 	font-weight: 500;
 	margin: 10px 5px 10px 0;
