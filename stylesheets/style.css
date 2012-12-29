@@ -24,7 +24,7 @@ h2 {
 	
 h3 { 
 	font-family: "p22-underground", sans-serif;
-	font-weight: 500;
+	font-weight: 300;
 	font-size: 20px;
 	line-height:20px;
 
@@ -50,6 +50,7 @@ h5 {
 header {
 	font-family: "p22-underground",sans-serif;
 	font-weight: 500;
+	text-transform: uppercase;
 }
 
 p {
@@ -77,7 +78,7 @@ header.masthead {
 	margin: 50px 10px 10px 10px;
 	padding-bottom: 0px;
 	border: none;
-/*	background-color: #ffe5aa;*/
+	text-transform: none;
 	}
 header.masthead h1 {
 	font-family: 'futura-pt', sans-serif;
@@ -91,9 +92,12 @@ header.masthead h1 {
 
 header h1 span.primary {
 	font-weight: 400;
-	
+	display:block;
+	margin-right: .3em;
 	}
- 
+header h1 span {
+	float:left;
+}
 div.nav.grid{
 	margin: 0px 0px 15px 0px;
 	height: 45%;
@@ -108,9 +112,10 @@ div.nav.grid{
 }
 .nav.grid svg g.nav.grid a text tspan {
 	fill: #333;
-	font-size: 20px;
+	font-size: 16px;
 	font-family: "p22-underground", sans-serif;
 	font-weight: 300;
+	text-transform: uppercase;
 }
 .nav.grid svg a rect {
 	fill: #fff;
@@ -123,6 +128,7 @@ div.nav.list {
 	margin-bottom: 20px;
 	position:relative;
 	height: 20px;
+	text-transform: uppercase;
 	z-index: 12;
 }
 div.nav.list ul {
@@ -236,17 +242,21 @@ li.nav.item.grid a span {
 	left:0px;
 }
 .slider {
-	/*background-color: #f0ddfa;*/
 }
 .slider.item > * {
 	margin-left: 0px;
+}
+div.block {
+	background-color: #f5f5f9;
+}
+div.block > * {
+	margin: 10px;
 }
 div header {
 	border-bottom: 1px #ccc solid;
 	font-size: 18px;
 	font-weight: 500;
 	margin: 10px 5px 10px 0;
-	text-transform: uppercase;
 }
 .slider.item p {
 	margin: 0 10px;
@@ -260,22 +270,11 @@ div header {
 	margin-right: 20px;
 }
 
-h5.blockquote {
-	margin-top: 50px;
-	margin-left: 50px;
-	font-size: 20px;
-	line-height: 22px;
-	font-style: normal;
-	color: #333;
-	word-spacing: 1px;
-	background-color: #fff;
-	padding: 15px 10px 20px 10px;
-	display: block;
-	border: 1px dashed #ccc;
 
+.blockquote {
 }
-
-div.blockquote:first-letter {
+/*
+div.blockquote p:first-letter {
 	display: block;
 	float: left;
 	font-size: 60px;
@@ -286,7 +285,7 @@ div.blockquote:first-letter {
 	margin:0;
 	color: #6088b0
 }
-
+*/
 
 .arrow {
 	width: 20px;
