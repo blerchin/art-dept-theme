@@ -1,7 +1,14 @@
-var svg = "http://www.w3.org/2000/svg";
-var xlink = "http://www.w3.org/1999/xlink";
+var ns = {
+	svg: "http://www.w3.org/2000/svg",
+	xlink: "http://www.w3.org/1999/xlink"
+}
 
-var grid_size = {};
+var grid_size = {
+		count: 6,
+		cols: 3,
+		rows: 2,
+		ratio: 2.2
+	};
 
 //Global Raphael SVG Elements
 var r_e = {};
@@ -28,29 +35,20 @@ $(window).ready( function(){
 	$(grid_container).empty();
 
 	setupGrid( grid_container);
-
 	drawGrid( grid_container, grid_images);
 	resizeGrid( grid_container, r_e.R, r_e.boxes );
-	
-	
 	
 	window.onresize = function() {
-		
-	$(grid_container).empty();
-
-	setupGrid( grid_container);
-
-	drawGrid( grid_container, grid_images);
-	resizeGrid( grid_container, r_e.R, r_e.boxes );
 	
+		$(grid_container).empty();
+		setupGrid( grid_container);
+		drawGrid( grid_container, grid_images);
+		resizeGrid( grid_container, r_e.R, r_e.boxes );
 	}
+	
 });
 
 function setupGrid(container){
-	grid_size.count = 6;
-	grid_size.cols = 3;
-	grid_size.rows = 2;
-	grid_size.ratio = 2.2;
 	
 	grid_size.width = $(container).width();
 	grid_size.height = grid_size.width / grid_size.ratio;
@@ -63,20 +61,18 @@ function setupGrid(container){
 }
 
 function resizeGrid(container, svg, object){
-		
-		setupGrid(container);
 
-		scaleTo( object, grid_size.width, grid_size.height );
-		
-		svg.setSize(grid_size.width, grid_size.height);
-		
+	setupGrid(container);
+	scaleTo( object, grid_size.width, grid_size.height );
+	svg.setSize(grid_size.width, grid_size.height);
 }
 
 function drawGrid(container, images){
+
 	r_e.R = Raphael(container, grid_size.width, grid_size.height );
 	r_e.R.canvas.setAttribute("id","grid-canvas");
 
-	r_e.cp=document.createElementNS(svg,"clipPath");
+	r_e.cp=document.createElementNS(ns.svg,"clipPath");
 	r_e.cp.setAttribute("id","win-clip");
 	r_e.R.canvas.appendChild(r_e.cp);
 	r_e.boxes = r_e.R.path( window_panel.path);
@@ -89,30 +85,31 @@ function drawGrid(container, images){
 }
 
 function drawGridImageByIndex( index, img_meta) {
+
 	var x = (i % grid_size.cols) * grid_size.img_width;
 	var y = i >= grid_size.cols ? grid_size.img_height : 0;
 	
-	var g = document.createElementNS(svg,"g");
+	var g = document.createElementNS(ns.svg,"g");
 		g.setAttribute('id','win'+i);
 		g.setAttribute('class','nav grid image');
 		r_e.R.canvas.appendChild( g );
 		
-	var a = document.createElementNS(svg,"a");
-		a.setAttributeNS(xlink,"xlink:href","//");
-		g.appendChild(a);
+	//var a = document.createElementNS(svg,"a");
+	//	a.setAttributeNS(ns.xlink,"xlink:href","//");
+	//	g.appendChild(a);
 	
 	var ratio = img_meta.height / img_meta.width;
 
 	var img = r_e.R.image(img_meta.src, x, y, grid_size.img_width, grid_size.img_width*ratio	);
 		img.toFront();
 		
-		a.appendChild(img.node);
+		g.appendChild(img.node);
 		img.node.setAttribute("preserveAspectRatio", "xMinYMin");
 		img.node.setAttribute("clip-path","url('#win-clip')");
 		r_e['win'+index] = img;
 
 /*  LABEL CODE - needs revision before use
-		var label = R.text(bb.x+(bb.width/2), bb.y+bb.height-10, img.text);
+		var label = R.text(bb.x+(bb.width/2), bb.y+bb.height-10, img.t ext);
 		console.log(label);
 		label.attr('class','label');
 		var labelPos = "top";
@@ -133,11 +130,10 @@ function drawGridImageByIndex( index, img_meta) {
 */			
 	}
 
-
 function scaleTo( object, width, height) {
 	console.log("scaling to "+width);
+//don't do two scaling operations at once (not sure if this is needed)
 	if(scaling == false){
-
 		scaling = true;
 		bb = object.getBBox();
 		console.log(bb.width);
@@ -146,7 +142,7 @@ function scaleTo( object, width, height) {
 			h: height / bb.height
 		}
 		console.log(scale.w, scale.h);
-//transform is buggy close to 1
+//transform sometimes has unexpected results close to 1
 		console.log(Math.abs(1 - scale.w) );
 		if( Math.abs(1 - scale.w) > .0001 
 			&& Math.abs(1 - scale.h) > .0001 ) {
@@ -158,7 +154,6 @@ function scaleTo( object, width, height) {
 		} else {
 			console.log("skipping scale");
 		}
-	
 }
 
 
