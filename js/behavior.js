@@ -18,34 +18,35 @@ var scaling = false;
 
 $(window).ready( function(){
 	
-	var grid_container = $('div.grid').get()[0];
-
-	var grid_images = [];
-	$('li.nav.grid.item a').get().forEach(function(o,i){
-			grid_images.push({
-				src: o.getElementsByTagName('img')[0].getAttribute('src'),
-				href: o.getAttribute('href'),
-				width: $(o).find('img').width(),
-				height: $(o).find('img').height(),
-				text: o.textContent,
-				});
-		});
-		
-
-	$(grid_container).empty();
-
-	setupGrid( grid_container);
-	drawGrid( grid_container, grid_images);
-	resizeGrid( grid_container, r_e.R, r_e.boxes );
-	
-	window.onresize = function() {
+	var grid_container = $('div.grid');
+	if(grid_container.length > 0) {
+		grid_container = grid_container.get()[0]
+		var grid_images = [];
+		$('li.nav.grid.item a').get().forEach(function(o,i){
+				grid_images.push({
+					src: o.getElementsByTagName('img')[0].getAttribute('src'),
+					href: o.getAttribute('href'),
+					width: $(o).find('img').width(),
+					height: $(o).find('img').height(),
+					text: o.textContent,
+					});
+			});
+			
 	
 		$(grid_container).empty();
+	
 		setupGrid( grid_container);
 		drawGrid( grid_container, grid_images);
 		resizeGrid( grid_container, r_e.R, r_e.boxes );
-	}
-	
+		
+		window.onresize = function() {
+		
+			$(grid_container).empty();
+			setupGrid( grid_container);
+			drawGrid( grid_container, grid_images);
+			resizeGrid( grid_container, r_e.R, r_e.boxes );
+		}
+	}	
 });
 
 function setupGrid(container){
