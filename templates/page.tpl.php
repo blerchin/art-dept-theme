@@ -89,28 +89,24 @@
 
   <header class="masthead fifteen columns">
 	<a href="<?php print $front_page ?>"><h1 class="title"><span class="primary">Whitman College</span><span class="secondary"> Art Department</span></h1></a>
-	<?php print render($page['header']); ?>
   </header>
 
 
     
-<div class="fifteen columns nav list alpha clearfix">
+<div class="ten columns nav list alpha">
     <?php if ($main_menu): ?>
         <?php print theme('links__system_main_menu', array(
           'links' => $main_menu,
           'attributes' => array(
             'id' => 'main-menu-links',
-            'class' => array('links', 'clearfix'),
-          ),
-          'heading' => array(
-            'text' => t('Main menu'),
-            'level' => 'h2',
-            'class' => array('element-invisible'),
+            'class' => array('links', 'clearfix', 'nav','list'),
           ),
         )); ?>
 
     <?php endif; ?>
-
+	<div class="five columns nav list alpha">
+		<?php print render($page['site_tools']); ?>
+	</div>
   </div> <!-- /nav list -->
   
   <?php if($is_front): ?>
@@ -133,7 +129,6 @@
   <?php endif; ?>
 
   <div id="main-wrapper" class="clearfix"><div id="main" class="clearfix">
-
     <?php if ($breadcrumb): ?>
       <div id="breadcrumb"><?php print $breadcrumb; ?></div>
     <?php endif; ?>
@@ -154,9 +149,9 @@
       
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
-        <h1 class="title" id="page-title">
-          <?php print $title; ?>
-        </h1>
+        <h2>
+      		<?php print $title; ?>
+	    </h2>
       <?php endif; ?>
       <?php print render($title_suffix); ?>
       <?php if ($tabs): ?>
@@ -173,6 +168,7 @@
 
       <?php print render($page['content']); ?>
       <?php print $feed_icons; ?>
+
     </div> <!-- /.section, /.content -->
 
 

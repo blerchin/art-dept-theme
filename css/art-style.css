@@ -58,7 +58,7 @@ p {
 	color: #333;
 }
 a {
-	text-decoration: none;
+	text-decoration: underline;
 	color: #000;
 }
 a.image.wrap {
@@ -124,26 +124,31 @@ div.nav.grid{
 }
 
 div.nav.list {
-	padding-left: 20px;
 	margin-bottom: 20px;
+	margin-top: 0px;
 	position:relative;
-	height: 20px;
+	height: 30px;
 	text-transform: uppercase;
 	z-index: 12;
 }
+
 div.nav.list ul {
 	float:left;
-	display: block;
+	margin-top: 0px;
+	padding-left: 0px;
 	position:relative;
 }
+
 div.nav.list ul div {
 	width: auto;
 	margin: 0px auto;
 }
+
 div.nav.list li {
 	float: left;
 	position: relative;
 }
+
 div.nav.list li ul {
 	position: absolute;
 	top: 40px;
@@ -160,7 +165,8 @@ div.nav.list li ul {
 div.nav.list li:hover ul {
 	height: auto;
 }
-li.nav.item {
+
+.nav.list li {
 	position:relative;
 	font-size: 22px;
 	line-height: 24px;
@@ -171,16 +177,15 @@ li.nav.item {
 	float: none;
 	font-family: "p22-underground", sans-serif;
 	font-style: normal;
-	font-weight: 800;
+	font-weight: 400;
 	padding: 10px;
-}
-li.nav.list.item {
 	text-transform: lowercase;
 }
-li.nav.list.item ul {
+
+.nav.list li ul {
 	margin-left: 0px;
 }
-li.nav.list.item ul li.nav.list.item {
+.nav.list li ul li.nav.list.item {
 	font-size: 16px;
 }
 /*
@@ -188,22 +193,22 @@ li.nav.list.item ul li.nav.list.item:after {
 	color: #ccc;
 	content:"|";
 }*/
-li.nav.list.item ul li.nav.list.item:last-child:after {
+.nav.list li ul li.nav.list.item:last-child:after {
 	content:none;
 }
-li.nav.list:nth-child(1) a, li.nav.list:nth-child(1) ul li.nav.list a{
+.nav.list li:nth-child(1) a, .nav.list li:nth-child(1) ul li.nav.list a{
 	color: #dda040;
 }
-li.nav.list:nth-child(2) a, li.nav.list:nth-child(2) ul li.nav.list a{
+.nav.list li:nth-child(2) a, .nav.list li:nth-child(2) ul li.nav.list a{
 	color: #b0cc80;
 }
-li.nav.list:nth-child(3) a, li.nav.list:nth-child(3) ul li.nav.list a{
+.nav.list li:nth-child(3) a, .nav.list li nth-child(3) ul li.nav.list a{
 	color: #b080cc;
 }
-li.nav.list:nth-child(4) a, li.nav.list:nth-child(4) ul li.nav.list a{
+.nav.list li:nth-child(4) a, .nav.list li:nth-child(4) ul li.nav.list a{
 	color: #6088b0;
 }
-li.nav.item a {
+li.nav li a {
 	font-weight: 300;
 	display:inline;
 	min-height: 20px;
@@ -306,4 +311,8 @@ div.footer > span {
 div.footer span span {
 	color: #666;
 	margin-right: 10px;
+}
+/*Drupal block stuff */
+div.contextual-links-wrapper {
+	float
 }

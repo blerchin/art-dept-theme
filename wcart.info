@@ -11,6 +11,7 @@ stylesheets[all][] = css/skeleton.css
 stylesheets[all][] = css/art-style.css
 stylesheets[print][] = css/print.css
 
+scripts[] = js/typekit-start.js
 scripts[] = js/jquery-1.8.0.min.js
 scripts[] = js/modernizr.js
 scripts[] = js/raphael.js
@@ -19,6 +20,7 @@ scripts[] = js/behavior.js
 
 regions[header] = Header
 regions[help] = Help
+regions[site_tools] = Site Tools
 regions[page_top] = Page top
 regions[page_bottom] = Page bottom
 
