@@ -85,15 +85,22 @@
  * @see html.tpl.php
  */
 ?>
+<script type="text/javascript" src="http://fast.fonts.com/jsapi/78f3f5fd-946a-48bb-b2a7-a2b9dd468dd4.js"></script>
 <div class="container">
+  <?php if ($messages): ?>
+    <div id="messages"><div class="section clearfix">
+      <?php print $messages; ?>
+    </div></div> <!-- /.section, /#messages -->
+  <?php endif; ?>
+
 
   <header class="masthead fifteen columns">
-	<a href="<?php print $front_page ?>"><h1 class="title"><span class="primary">Whitman College</span><span class="secondary"> Art Department</span></h1></a>
+	<a href="<?php print $front_page ?>"><h1 class="title">Whitman College Art Department</h1></a>
   </header>
 
 
     
-<div class="ten columns nav list alpha">
+<div class="twelve columns nav list alpha">
     <?php if ($main_menu): ?>
         <?php print theme('links__system_main_menu', array(
           'links' => $main_menu,
@@ -102,15 +109,15 @@
             'class' => array('links', 'clearfix', 'nav','list'),
           ),
         )); ?>
-
+</div>
     <?php endif; ?>
-	<div class="five columns nav list alpha">
+<div class="three columns search alpha">
 		<?php print render($page['site_tools']); ?>
-	</div>
-  </div> <!-- /nav list -->
+</div>
+ <!-- /nav list -->
   
   <?php if($is_front): ?>
-  	<div class="nav grid fifteen columns">
+  	<div class="nav grid windows fifteen columns">
 				<ul>
 					<li class="nav grid item five columns alpha"><a class="image wrap w" href ="#"><img src="<?php print $directory; ?>/images/fouts/a.png" /><span>Think</span></a></li>
 					<li class="nav grid item five columns alpha"><a class="image wrap w" href ="#"><img src="<?php print $directory; ?>/images/fouts/b.png" /><span>Sculpt</span></a></li>
@@ -120,12 +127,6 @@
 					<li class="nav grid item five columns alpha"><a class="image wrap w" href ="#"><img src="<?php print $directory; ?>/images/fouts/a.png" /><span>Learn</span></a></li>
 				</ul>
 			</div>
-  <?php endif; ?>
-
-  <?php if ($messages): ?>
-    <div id="messages"><div class="section clearfix">
-      <?php print $messages; ?>
-    </div></div> <!-- /.section, /#messages -->
   <?php endif; ?>
 
   <div id="main-wrapper" class="clearfix"><div id="main" class="clearfix">
