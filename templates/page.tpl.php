@@ -116,7 +116,8 @@
 </div>
  <!-- /nav list -->
   
-  <?php if($is_front): ?>
+  <?php //if($is_front): ?>
+  <?php if(false): ?>
   	<div class="nav grid windows fifteen columns">
 				<ul>
 					<li class="nav grid item five columns alpha"><a class="image wrap w" href ="#"><img src="<?php print $directory; ?>/images/fouts/a.png" /><span>Think</span></a></li>
@@ -129,23 +130,21 @@
 			</div>
   <?php endif; ?>
 
-  <div id="main-wrapper" class="clearfix"><div id="main" class="clearfix">
     <?php if ($breadcrumb): ?>
-      <div id="breadcrumb"><?php print $breadcrumb; ?></div>
+      <div class = "fifteen columns block breadcrumbs" id="breadcrumb"><?php print $breadcrumb; ?></div>
     <?php endif; ?>
 
-    <?php if ($page['sidebar_first']): ?>
-      <div class="five columns block sidebar blockquote">
-        <?php print render($page['sidebar_first']); ?>
-      </div>
-    <?php endif; ?>
-    
-    <?php if ($page['featured']): ?>
+   <?php if ($page['featured']): ?>
 	    <div id="featured" class="ten columns block">
     	  <?php print render($page['featured']); ?>
 	    </div>
-  	<?php endif; ?>
+    <?php endif; ?>
 
+    <?php if ($page['sidebar']): ?>
+      <div class="five columns block sidebar">
+        <?php print render($page['sidebar']); ?>
+      </div>
+    <?php endif; ?>
     <div id="content" class="fifteen columns content block"><div class="section">
       
       <?php print render($title_prefix); ?>

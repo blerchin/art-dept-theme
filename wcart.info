@@ -23,15 +23,11 @@ regions[site_tools] = Site Tools
 regions[page_top] = Page top
 regions[page_bottom] = Page bottom
 
-
+regions[breadcrumbs] = Breadcrumbs
 regions[featured] = Featured
+regions[sidebar] = Sidebar first
 regions[content] = Content
-regions[sidebar_first] = Sidebar first
-regions[sidebar_second] = Sidebar second
 
-regions[triptych_first] = Triptych first
-regions[triptych_middle] = Triptych middle
-regions[triptych_last] = Triptych last
 
 regions[footer_firstcolumn] = Footer first column
 regions[footer_secondcolumn] = Footer second column
