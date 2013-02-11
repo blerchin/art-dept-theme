@@ -24,11 +24,14 @@ header {
 }
 header.masthead {
 	position: relative;
-	margin: 50px 10px 10px 10px;
+	margin: -69px 10px 10px 10px;
 	padding-bottom: 0px;
 	border: 0;
 	text-transform: none;
 	}
+header.masthead.front {
+	margin: 10px 10px 10px 10px;
+}
 header.masthead a {
 	text-decoration: none;
 
@@ -40,7 +43,6 @@ header.masthead a h1 {
 	font-family: 'Futura W01 Bold', sans-serif;
 	text-transform: capitalize;
 	text-decoration: none;
-	letter-spacing: 0px;
 	margin-bottom: 0px;
 	color: $header-blue;
 }
@@ -259,11 +261,13 @@ form input[type=text] {
 .slider.item > * {
 	margin-left: 0px;
 }
+div.system.header {
+	margin: 20px 10px 0px 10px;
+}
 div.block {
-	background-color: #fff;
+	background-color: $bg-gray;
 }
 .inside {
-	background-color: $bg-gray;
 	padding: 10px;
 }
 div header {

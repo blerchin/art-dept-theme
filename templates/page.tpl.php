@@ -92,15 +92,18 @@
       <?php print $messages; ?>
     </div></div> <!-- /.section, /#messages -->
   <?php endif; ?>
-
-
-  <header class="masthead fifteen columns">
-	<a href="<?php print $front_page ?>"><h1 class="title">Whitman College Art Department</h1></a>
+  <div class="system header sixteen columns">
+	<?php print render($page['header']); ?>
+  </div>
+  <header class="masthead sixteen columns
+				<?php if($is_front) echo ' front'?>">
+  <a href="<?php print $front_page ?>"><h1 class="title">
+		Whitman College Art Department</h1></a>
   </header>
 
 
     
-<div class="twelve columns nav list alpha">
+<div class="thirteen columns nav list alpha">
     <?php if ($main_menu): ?>
         <?php print theme('links__system_main_menu', array(
           'links' => $main_menu,
@@ -116,22 +119,9 @@
 </div>
  <!-- /nav list -->
   
-  <?php //if($is_front): ?>
-  <?php if(false): ?>
-  	<div class="nav grid windows fifteen columns">
-				<ul>
-					<li class="nav grid item five columns alpha"><a class="image wrap w" href ="#"><img src="<?php print $directory; ?>/images/fouts/a.png" /><span>Think</span></a></li>
-					<li class="nav grid item five columns alpha"><a class="image wrap w" href ="#"><img src="<?php print $directory; ?>/images/fouts/b.png" /><span>Sculpt</span></a></li>
-					<li class="nav grid item five columns alpha"><a class="image wrap w" href ="#"><img src="<?php print $directory; ?>/images/fouts/c.png" /><span>Draw</span></a></li>	
-					<li class="nav grid item five columns alpha"><a class="image wrap w" href ="#"><img src="<?php print $directory; ?>/images/fouts/d.png" /><span>Build</span></a></li>
-					<li class="nav grid item five columns alpha"><a class="image wrap w" href ="#"><img src="<?php print $directory; ?>/images/fouts/e.png" /><span>Connect</span></a></li>
-					<li class="nav grid item five columns alpha"><a class="image wrap w" href ="#"><img src="<?php print $directory; ?>/images/fouts/a.png" /><span>Learn</span></a></li>
-				</ul>
-			</div>
-  <?php endif; ?>
 
     <?php if ($breadcrumb): ?>
-      <div class = "fifteen columns block breadcrumbs" id="breadcrumb"><?php print $breadcrumb; ?></div>
+      <div class = "sixteen columns block breadcrumbs" id="breadcrumb"><?php print $breadcrumb; ?></div>
     <?php endif; ?>
 
    <?php if ($page['featured']): ?>
@@ -141,11 +131,11 @@
     <?php endif; ?>
 
     <?php if ($page['sidebar']): ?>
-      <div class="five columns block sidebar">
+      <div class="six columns block sidebar">
         <?php print render($page['sidebar']); ?>
       </div>
     <?php endif; ?>
-    <div id="content" class="fifteen columns content block"><div class="section">
+    <div id="content" class="sixteen columns content block"><div class="section">
       
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
