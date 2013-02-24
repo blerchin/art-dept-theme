@@ -95,6 +95,14 @@
   <div class="system header sixteen columns">
 	<?php print render($page['header']); ?>
   </div>
+	<script>
+	//get image index based on site section
+	// for production:
+		var window_context = window.location.pathname;
+	// need to remove 1st url arg for dev-site
+		var window_context = window_context.match(/(\/art-dept-drupal)*(.*)/)[2];
+		draw_window(window_context);
+	</script>
   <header class="masthead sixteen columns
 				<?php if($is_front) echo ' front'?>">
   <a href="<?php print $front_page ?>"><h1 class="title">
@@ -105,13 +113,7 @@
     
 <div class="thirteen columns nav list alpha">
     <?php if ($main_menu): ?>
-        <?php print theme('links__system_main_menu', array(
-          'links' => $main_menu,
-          'attributes' => array(
-            'id' => 'main-menu-links',
-            'class' => array('links', 'clearfix', 'nav','list'),
-          ),
-        )); ?>
+	<?php print theme('nice_menus_main_menu'); ?>
 </div>
     <?php endif; ?>
 <div class="three columns search alpha">
@@ -121,7 +123,7 @@
   
 
     <?php if ($breadcrumb): ?>
-      <div class = "sixteen columns block breadcrumbs" id="breadcrumb"><?php print $breadcrumb; ?></div>
+      <div class = "sixteen columns block breadcrumbs" id="breadcrumb"><?php //print $breadcrumb; ?></div>
     <?php endif; ?>
 
    <?php if ($page['featured']): ?>
@@ -135,7 +137,7 @@
         <?php print render($page['sidebar']); ?>
       </div>
     <?php endif; ?>
-    <div id="content" class="sixteen columns content block"><div class="section">
+    <div id="content" class="sixteen columns content block section"><div class="section">
       
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>

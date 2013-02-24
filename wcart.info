@@ -12,9 +12,11 @@ stylesheets[all][] = css/art-style.css
 stylesheets[print][] = css/print.css
 
 scripts[] = js/jquery-1.8.0.min.js
+scripts[] = js/jquery.masonry.min.js
 scripts[] = js/modernizr.js
 scripts[] = js/raphael.js
 scripts[] = js/behavior.js
+scripts[] = js/windows.js
 
 
 regions[header] = Header
