@@ -29,7 +29,12 @@ var draw_window = function( context){
 		grid_size.lighten = true;	
 	}
 // get json file with relevant args appended
-	$.get('windows'+context, function(data){
+	$.get('http://' 
+		+ window.location.host
+		+ '/art-dept-drupal'
+		+ '/windows'
+		+ context,
+	       	function(data){
 		console.log(data);
 		var grid_images = [];
 		data.images.forEach(function(img) {

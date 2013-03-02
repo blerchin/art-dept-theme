@@ -100,7 +100,7 @@
 	// for production:
 		var window_context = window.location.pathname;
 	// need to remove 1st url arg for dev-site
-		var window_context = window_context.match(/(\/art-dept-drupal)*(.*)/)[2];
+		var window_context = window_context.match(/(\/art-dept-drupal)*(.*?)\//)[2];
 		draw_window(window_context);
 	</script>
   <header class="masthead sixteen columns
