@@ -1,5 +1,7 @@
-$(document).ready(function(){
-	$('.grid').masonry({
+$(window).load(function(){
+	$('.grid.bricks').masonry({
 		itemSelector: '.item'
 	});
 });
+
+

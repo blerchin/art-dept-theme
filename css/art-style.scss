@@ -2,10 +2,6 @@ $header-blue: #68c;
 $bg-gray: #f5f5f9;
 
 body {
-	position:absolute;
-	width: 100%;
-	height: 100%;
-	font-weight: normal;
 	}
 	
 @media only screen and (max-width: 479px) body {
@@ -13,9 +9,8 @@ body {
 	overflow-y: scroll;
 }	
 .container {
-	/*background-color: #ded0b4;*/
-	height:100%;
-	overflow:visible;
+	overflow-x:hidden;
+	overflow-y: visible;
 }
 
 header {
@@ -110,8 +105,12 @@ a {
 	text-decoration: underline;
 	color: #000;
 }
+img {
+	max-width: 100%;
+	height: auto;
+}
 ul li, .item-list ul li {
-	margin:0px;
+	/*margin:0px;*/
 
 }
 a.image.wrap {
@@ -142,6 +141,7 @@ div.nav.list {
 }
 .nav.list ul {
 	float:left;
+	width: 100%;
 	margin-top: 0px;
 	padding-left: 0px;
 	position:relative;
@@ -187,14 +187,25 @@ div.nav.list {
 	overflow: hidden;
 }
 /* show sub-menu on active or hover */
-.nav.list li.active-trail ul, .nav.list li:hover ul{
-	top:40px;
+.nav.list li.active-trail ul,
+.nav.list li:hover ul,
+.nav.list li ul:hover
+{
 	left:0px;
+	background-color: #fff;
+	margin-top: 0px;
+	padding-top: 5px;
 	margin-left: 10px;
-	width: 100%;
+	width: 2000px;
+	height: 1.5em;
 	position: absolute;
 	visibility: visible;
 	overflow: visible;
+	z-index: 11;
+}
+.nav.list li:hover ul,
+.nav.list li ul:hover {	
+	z-index: 12;	
 }
 
 .nav.list li ul li{
@@ -239,6 +250,7 @@ li.nav.list.item ul li.nav.list.item:after {
 	display:inline-block;
 	overflow: visible;
 	vertical-align: top;
+	width: 30%;
 }
 .list.grid li h2, .list.grid li .views-field-title {
 	position: relative;
@@ -251,21 +263,28 @@ li.nav.list.item ul li.nav.list.item:after {
 	z-index: 11;
 }
 .list.grid li img {
+	max-width: 100%;
+	height: auto;
 	position: relative;
 	top: 0px;
-	margin-bottom: -3em;
 	z-index: 2;
 }
-.list.grid.groupings li {
-	position: relative;
+.list.grid.bricks li img {
+	margin-bottom: -3em;
 }
-.list.grid.groupings li img {
+.list.groupings .views-field li {
+	margin-left: 0px;
+	margin-right: 10px;
+}
+.list.groupings ul li ul li {
+	width: 30%;
+	display: inline-block;
+	vertical-align: top;
+}
+.list.groupings li img {
 	top: auto;
 	position: static;
 	margin-bottom: 10px;
-
-}
-.list.grid li img {
 	width: 100%;
 	height: auto;
 }
@@ -277,7 +296,6 @@ li.nav.list.item ul li.nav.list.item:after {
 	width: 100%;
 	height: 100%;
 }
-
 .list.grid li a span {
 	position: absolute;
 	display:block;
@@ -292,6 +310,13 @@ li.nav.list.item ul li.nav.list.item:after {
 	text-align: right;
 	bottom: 0px;
 	left:0px;
+}
+/* in a view, it's tough to make first and last names
+ * show together, so we'll do that here */
+.views-field-field-first-name,
+.views-field-field-last-name {
+	font-weight: bold;
+	display: inline-block;
 }
 .container div.search {
 	background-color: #fff;
