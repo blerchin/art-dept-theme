@@ -85,23 +85,22 @@
  * @see html.tpl.php
  */
 ?>
-<script type="text/javascript" src="http://fast.fonts.com/jsapi/78f3f5fd-946a-48bb-b2a7-a2b9dd468dd4.js"></script>
 <div class="container">
-  <?php if ($messages): ?>
+  <?php if ($messages && $is_admin): ?>
     <div id="messages"><div class="section clearfix">
       <?php print $messages; ?>
     </div></div> <!-- /.section, /#messages -->
   <?php endif; ?>
   <div class="system header sixteen columns">
+		<h3 id="return-link"><a href="http://whitman.edu"><img src="<?php echo $base_path; echo  $directory; ?>/images/favicon.png" height="10" alt="Whitman College Logo">Back to Whitman.edu</a></h3>
 	<?php print render($page['header']); ?>
   </div>
 	<script>
-	//get image index based on site section
-	// for production:
-		var window_context = window.location.pathname;
-	// need to remove 1st url arg for dev-site
-		var window_context = window_context.match(/(\/art-dept-drupal)*(.*?)\//)[2];
-		draw_window(window_context);
+	// empty out container div so no flash of unstyled images
+	(function ($) {
+			var $win = $('.windows');
+			$win.height($win.height());
+	})(jQuery);
 	</script>
   <header class="masthead sixteen columns
 				<?php if($is_front) echo ' front'?>">
@@ -112,10 +111,8 @@
 
     
 <div class="thirteen columns nav list alpha">
-    <?php if ($main_menu): ?>
-	<?php print theme('nice_menus_main_menu'); ?>
+				<?php print theme('nice_menus_main_menu'); ?>
 </div>
-    <?php endif; ?>
 <div class="three columns search alpha">
 		<?php print render($page['site_tools']); ?>
 </div>
@@ -123,24 +120,20 @@
   
 
     <?php if ($breadcrumb): ?>
-      <div class = "sixteen columns block breadcrumbs" id="breadcrumb"><?php //print $breadcrumb; ?></div>
+      <div class = "sixteen columns block breadcrumbs" id="breadcrumb"></div>
     <?php endif; ?>
 
-   <?php if ($page['featured']): ?>
-	    <div id="featured" class="ten columns block">
-    	  <?php print render($page['featured']); ?>
-	    </div>
-    <?php endif; ?>
 
-    <?php if ($page['sidebar']): ?>
-      <div class="six columns block sidebar">
-        <?php print render($page['sidebar']); ?>
-      </div>
-    <?php endif; ?>
-    <div id="content" class="sixteen columns content block section"><div class="section">
+	<div id="content" class="<?php if($page['sidebar']) print 'ten';
+																	else print 'sixteen ';?> 
+																<?if (!(arg(0)=='node' &&
+																		(arg(2)=='edit' || arg(1)=='add'))
+																		&& arg(0)!='admin')
+																		print 'not-admin '; ?>
+							columns alpha content block section"><div class="section">
       
       <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
+			<?php if ($title && !$is_front ):?>
         <h2>
       		<?php print $title; ?>
 	    </h2>
@@ -158,17 +151,27 @@
         </ul>
       <?php endif; ?>
 
+
       <?php print render($page['content']); ?>
       <?php print $feed_icons; ?>
-
+			</div>
     </div> <!-- /.section, /.content -->
 
+			<?php if ($page['sidebar']): ?>
+				<div class="six columns alpha block sidebar">
+					<?php print render($page['sidebar']); ?>
+				</div>
+			<?php endif; ?>
 
-    <?php if ($page['footer']): ?>
-      <div id="footer" class="fifteen columns footer">
-        <?php print render($page['footer']); ?>
+      <div id="footer" class="sixteen columns footer">
+				<div>
+					<span>Site by <a href="http://benlerchin.com">Ben Lerchin</a></span>
+					<span>|</span>
+					<span>Powered by <a href="http://drupal.org">Drupal</a></span>
+					<span>|</span>
+					<span><a href="<?php $base_path ?>/user">Admin Login</a></span>
+				</div>
       </div> <!-- /#footer -->
-    <?php endif; ?>
 
   </div></div> <!-- /.section, /#footer-wrapper -->
 

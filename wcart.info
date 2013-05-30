@@ -7,16 +7,18 @@ core = 7.x
 
 
 stylesheets[all][] = css/skeleton-layout.css
+stylesheets[all][] = css/base.css
 stylesheets[all][] = css/skeleton.css
+stylesheets[all][] = css/admin.css
 stylesheets[all][] = css/art-style.css
 stylesheets[print][] = css/print.css
 
-scripts[] = js/jquery-1.8.0.min.js
-scripts[] = js/jquery.masonry.min.js
 scripts[] = js/modernizr.js
+scripts[] = js/jquery.masonry.min.js
 scripts[] = js/raphael.js
-scripts[] = js/behavior.js
 scripts[] = js/windows.js
+scripts[] = js/jquery.cycle.lite.js
+scripts[] = js/behavior.js
 
 
 regions[header] = Header
@@ -26,8 +28,7 @@ regions[page_top] = Page top
 regions[page_bottom] = Page bottom
 
 regions[breadcrumbs] = Breadcrumbs
-regions[featured] = Featured
-regions[sidebar] = Sidebar first
+regions[sidebar] = Sidebar
 regions[content] = Content
 
 

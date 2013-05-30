@@ -2,33 +2,30 @@ $header-blue: #68c;
 $bg-gray: #f5f5f9;
 
 body {
-	position:absolute;
-	width: 100%;
-	height: 100%;
-	}
+	font-family: Georgia, serif;
+	font-size: 16px;
+	color: #333;
 	
-@media only screen and (max-width: 479px) body {
-	position: relative;
-	overflow-y: scroll;
-}	
+	}
 .container {
-	/*background-color: #ded0b4;*/
-	height:100%;
-	overflow:visible;
+	overflow-x:hidden;
+	overflow-y: visible;
 }
 
 header {
-	font-family: 'DINNextW01-CondensedHea',sans-serif;
-	font-weight: 500;
+	font-family: 'DINNextW01-CondensedBol',sans-serif;
 	text-transform: uppercase;
 }
 header.masthead {
 	position: relative;
-	margin: 50px 10px 10px 10px;
+	margin: -41px 10px 10px 10px;
 	padding-bottom: 0px;
 	border: 0;
 	text-transform: none;
 	}
+header.masthead.front {
+	margin: 10px 10px 10px 10px;
+}
 header.masthead a {
 	text-decoration: none;
 
@@ -36,45 +33,69 @@ header.masthead a {
 
 header.masthead a h1 {
 	font-size: 40px;
+	font-weight: normal;
 	line-height: 46px;
 	font-family: 'Futura W01 Bold', sans-serif;
 	text-transform: capitalize;
 	text-decoration: none;
-	letter-spacing: 0px;
 	margin-bottom: 0px;
-	color: $header-blue;
+	color: #68c;
 }
 
 h2 {
-	color: #555;
-	font-family: 'DINNextW01-CondensedBol',sans-serif;
+	color: #000;
+	font-family: 'DINNextW01-CondensedBol', sans-serif;
+	font-weight: normal;
 	text-indent: 0px;
 	margin-top: 15px;
-	font-size: 21px;
+	font-size: 32px;
 	font-style: normal;
-	font-weight: 400;
-	line-height: 26px;
+	line-height: 36px;
 	text-transform: uppercase;
+	width: 100%;
+	border-bottom: 1px solid #555;
 }
 	
-h3 { 
+h3, .views-field-title, .view-grouping-header { 
+	color: #555;
 	font-style: normal;
-	font-weight: 400;
-	font-family: 'DINNextW01-CondensedReg';
+	font-weight: normal;
+	font-family: 'DINNextW01-CondensedBol', sans-serif;
 	text-transform: uppercase;
-	font-size: 24px;
-	line-height: 30px;
+	font-size: 26px;
+	line-height: 24px;
+	margin: 10px 0px 10px 0px;
 
 }
+h3 a, .views-field-title a, .view-grouping-header a { 
+	color: #555;
+	text-decoration: none;
+}
+h3 a:hover, .views-field-title a:hover, .view-grouping-header a:hover { 
+	color: #000;
+	text-decoration: underline;
+}
 h4, lh {
-	font-family: 'DINNextW01-CondensedReg';
+	font-family: 'DINNextW01-CondensedReg', sans-serif;
+	font-weight: normal;
 	font-size: 20px;
-	font-weight: 500;
 	line-height: 20px;
 	color: #333;
 	padding: 4px 0px;
 	margin-bottom: 4px;
 	border-bottom: 0px dashed #000;
+}
+div.block {
+	overflow:hidden;
+
+}
+
+ul {
+	margin:0;
+	padding:0;
+}
+ul.inline li {
+	padding: 0;
 }
 
 p {
@@ -84,19 +105,26 @@ p {
 }
 a {
 	text-decoration: underline;
-	color: #000;
+	color: #664400;
 }
-a.image.wrap {
-	display: block;
-	overflow: hidden;
+a:visited {
+	color: #660044;
 }
-a.image.wrap.h img {
-	height: 100%;
-	width:auto;
+a:hover {
+	text-decoration: underline;
 }
-a.image.wrap.w img {
-	width:100%;
+img {
+	max-width: 100%;
 	height: auto;
+}
+ul li, .item-list ul li {
+	/*margin:0px;*/
+
+}
+.system.header .list.grid li img {
+	width: 100%;
+	z-index: 0;
+	opacity: .5;
 }
 .grid.windows {
 	background-color: #fff;
@@ -106,58 +134,39 @@ div.nav.list {
 	margin-bottom: 20px;
 	margin-top: 0px;
 	position:relative;
-	height: 30px;
+	height: 65px;
 	text-transform: uppercase;
 	width: 100%;
 	z-index: 12;
+	overflow: visible;
 }
-
-div.nav.list ul {
+.nav.list ul {
 	float:left;
+	width: 100%;
 	margin-top: 0px;
 	padding-left: 0px;
 	position:relative;
+	visibility: visible;
+	overflow: visible;
 }
 
-div.nav.list ul div {
+.nav.list ul div {
 	width: auto;
 	margin: 0px auto;
 }
-
-div.nav.list li {
-	float: left;
-	position: relative;
-}
-
-div.nav.list li ul {
-	position: absolute;
-	top: 40px;
-	left: 0px;
-	float: none;
-	clear: left;
-	display: block;
-	overflow: hidden;
-	height: 0px;
-	padding-top: 10px;
-	background-color: #fff;
-	z-index: 12;
-}
-div.nav.list li:hover ul {
-	height: auto;
-}
 .nav.list li {
-	position:relative;
+	float: left;
+	position:static;
 	font-size: 22px;
 	line-height: 24px;
 	letter-spacing: 0px;
 	text-decoration: none; 
 	list-style: none;
 	display: block;
-	float: none;
 	font-family: DINNextW01-CondensedReg, sans-serif;
-	font-weight: 100;
 	font-style: normal;
-	padding: 10px;
+	overflow: visible;
+	padding: 10px 10px 0px 0px;
 	text-transform: uppercase;
 }
 .nav li a {
@@ -168,13 +177,59 @@ div.nav.list li:hover ul {
 	margin-bottom: 7px;
 	margin-right: 7px;
 }
+.nav li a:hover {
+	text-decoration: underline;
+}
+/* hide sub-menus unless the section is active*/
+.nav.list li ul{
+	position:absolute;
+	left: 0;
+	right: 0;
+	visibility: hidden;
+	height: 0;
+	width: 0;
+	overflow: hidden;
+}
+/* TO-DO: don't do rollovers on handheld devices */
+	
+/* show sub-menu on active or hover */
+.nav.list li.active-trail ul,
+.nav.list li:hover ul,
+.nav.list li ul:hover
+{
+	left:0px;
+	background-color: #fff;
+	margin-top: 0px;
+	padding-top: 5px;
+	margin-left: 10px;
+	width: 2000px;
+	height: 1.5em;
+	position: absolute;
+	visibility: visible;
+	overflow: visible;
+	z-index: 11;
+}
 
-.nav.list li ul {
+.nav.list li:hover ul,
+.nav.list li ul:hover {	
+	z-index: 12;	
+}
+
+.nav.list li ul li{
+	float: left;
+	font-family:'DINNextW01-CondensedReg',sans-serif;
+	font-size: 18px;
+	display: inline;
+	padding-top: 0px;
 	margin-left: 0px;
+	background-color: #fff;
+	z-index: 10;
 }
-.nav.list li ul li.nav.list.item {
-	font-size: 16px;
+/* only bold active sub menus; color connects to top implicitly */
+.nav.list li ul li.active-trail {
+	text-decoration: underline;
 }
+
 /*
 li.nav.list.item ul li.nav.list.item:after {
 	color: #ccc;
@@ -184,35 +239,71 @@ li.nav.list.item ul li.nav.list.item:after {
 	content:none;
 }
 
-.nav.list li:nth-child(1) a, .nav.list li:nth-child(1) ul li.nav.list a{
-	color: #dda040;
+.nav.list li:nth-child(1) a, .nav.list li:nth-child(1) ul li a{
+	color: #68c;
 }
-.nav.list li:nth-child(2) a, .nav.list li:nth-child(2) ul li.nav.list a{
-	color: #b0cc80;
-}
-.nav.list li:nth-child(3) a, .nav.list li:nth-child(3) ul li.nav.list a{
+.nav.list li:nth-child(2) a, .nav.list li:nth-child(2) ul li a{
 	color: #b080cc;
 }
-.nav.list li:nth-child(4) a, .nav.list li:nth-child(4) ul li.nav.list a{
-	color: #6088b0;
+.nav.list li:nth-child(3) a, .nav.list li:nth-child(3) ul li a{
+	color: #b0cc80;
+}
+.nav.list li:nth-child(4) a, .nav.list li:nth-child(4) ul li a{
+	color: #dda040;
 }
 
 
-li.grid.item {
-	height:45%;
-	width: 30%;
+.list.grid li {
 	display:inline-block;
-	margin: 0px 20px 10px 0px;
-	overflow: hidden;
+	overflow: visible;
+	vertical-align: top;
+	width: 30%;
+}
+.list.grid li h2, .list.grid li .views-field-title {
+	position: relative;
+	background-color: $bg-gray;
+	opacity: .8;
+	width: 100%;
+	padding: .3em 0;
+	margin-bottom: 0px;
+	display:block;
+	z-index: 11;
+}
+.list.grid li img {
+	max-width: 100%;
+	height: auto;
+	position: relative;
+	top: 0px;
+	z-index: 2;
+}
+.list.grid.bricks li img {
+	margin-bottom: -3em;
+}
+.list.groupings .views-field li {
+	margin-left: 0px;
+	margin-right: 10px;
+}
+.list.groupings ul li ul li {
+	width: 30%;
+	display: inline-block;
 	vertical-align: top;
 }
-li.grid.item a.image.wrap {
+.list.groupings li img {
+	top: auto;
+	position: static;
+	margin-bottom: 10px;
+	width: 100%;
+	height: auto;
+}
+.list.grid li p {
+	margin-top: 5px;	
+}
+.list.grid li a.image.wrap {
 	display: block;
 	width: 100%;
 	height: 100%;
 }
-
-li.item.grid a span {
+.list.grid li a span {
 	position: absolute;
 	display:block;
 	width: 100%;
@@ -223,10 +314,16 @@ li.item.grid a span {
 	color: #fff;
 	font-size: 20px;
 	line-height: 18px;
-	font-weight: 500;
 	text-align: right;
 	bottom: 0px;
 	left:0px;
+}
+/* in a view, it's tough to make first and last names
+ * show together, so we'll do that here */
+.views-field-field-first-name,
+.views-field-field-last-name {
+	font-weight: bold;
+	display: inline-block;
 }
 .container div.search {
 	background-color: #fff;
@@ -235,40 +332,57 @@ li.item.grid a span {
 .search div#block-search-form {
 	float: right;
 	background-color: #fff;
-	margin: 0px 10px;
+	margin: 10px 0px;
 }
-.search div.block > * {
-	margin:5px 0px 0px 0px;
+.element-invisible {
+	height: 0;
+	margin: 0;
 }
 form input[type=text] {
 	border: 1px #999 solid;
-	box-shadow: 0px 0px 0px #fff;
 	height: 20px;
 	padding:0px;
 	margin:0px 5px;
+	display:inline;
 
 }
-form input[type=submit]{
+#block-search-form form input[type=submit]{
 	border: 0px;
 	background: url(../images/wc-art-glyphs-small.svg) no-repeat center;
 	color: transparent;
 	width: 20px;
 	height: 20px;
-	display:hidden;
+}
+#block-search-form .form-item {
+	vertical-align: top;
+	margin-top: 0px;
+	margin-right: 5%;
+	width: 75%;
+	display: inline-block;
+}
+#block-search-form .form-actions {
+	display: inline-block;
+	width: 18%;
 }
 .slider.item > * {
 	margin-left: 0px;
 }
-div.block {
-	background-color: #fff;
+div.system.header {
+	margin: 20px 0px 0px 0px;
+}
+div.container div.section {
+	background-color: $bg-gray;
+	padding: 10px;
+	margin-left: 0px;
+}
+
+div.section > * {
 }
 .inside {
-	background-color: $bg-gray;
 	padding: 10px;
 }
 div header {
 	font-size: 18px;
-	font-weight: 500;
 	margin: 10px 5px 10px 0;
 }
 .slider.item p {
@@ -284,42 +398,47 @@ div header {
 }
 
 
-.blockquote {
-}
-/*
-div.blockquote p:first-letter {
+div.drop-cap p:first-child:first-letter {
 	display: block;
 	float: left;
 	font-size: 60px;
-	line-height: 55px;
-	font-weight: 700;
+	line-height: 50px;
 	padding-bottom: 0px;
 	padding-right: 7px;
 	margin:0;
-	color: #6088b0
 }
-*/
 
-.arrow {
-	width: 20px;
-	height: 20px;
-	display: inline-block;
-	float: left;
-	background-image: url("../images/arrows.png");
-}
-div.arrow.left {
-	background-position: 0 0;
-}
-div.arrow.right {
-	background-position: 20px 0px;
-}
-div.footer > span {
-	margin: 0px auto; 
-}
-div.footer span span {
+div.footer {
+	background-color: #fff;
 	color: #666;
-	margin-right: 10px;
+	font-size: 14px;
+	margin-top: 20px;
 }
+
+div#block-user-login h2 {
+	font-size: 14px;
+	font-family: Georgia, serif;
+	text-decoration: underline;
+	width: auto;
+	border-width: 0px;
+	line-height: auto;
+	text-transform: none;
+	display: inline;
+}
+div#block-user-login h2:hover {
+	cursor: pointer;
+}
+
+
 /*Drupal block stuff */
 div.contextual-links-wrapper {
+}
+
+
+/* for handheld */
+@media only screen and (max-device-width: 480px) {
+	.sidebar {
+		display: hidden;
+		height: 0px;
+	}
 }

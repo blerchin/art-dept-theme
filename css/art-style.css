@@ -1,385 +1,689 @@
 body {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  font-weight: normal; }
-
-@media and {
-  position: relative;
-  overflow-y: scroll; }
+	font-family: Georgia, serif;
+	font-size: 16px;
+	color: #333;
+	
+	}
 .container {
-    /*
-   * background-color: #ded0b4;
-   */
-  height: 100%;
-  overflow: visible; }
+	overflow-x: hidden;
+}
 
 header {
-  font-family: 'DINNextW01-CondensedHea', sans-serif;
-  text-transform: uppercase; }
-
+	font-family: 'DINNextW01-CondensedBol',sans-serif;
+	text-transform: uppercase;
+}
 header.masthead {
-  position: relative;
-  margin: -68px 10px 10px 10px;
-  padding-bottom: 0px;
-  border: 0;
-  text-transform: none; }
-
+	position: relative;
+	margin: -38px 10px 10px 10px;
+	padding-bottom: 0px;
+	border: 0;
+	text-transform: none;
+	}
 header.masthead.front {
-  margin: 10px 10px 10px 10px; }
-
+	margin: 10px 10px 10px 10px;
+}
 header.masthead a {
-  text-decoration: none; }
+	text-decoration: none;
+
+}
 
 header.masthead a h1 {
-  font-size: 40px;
-  font-weight: normal;
-  line-height: 46px;
-  font-family: 'Futura W01 Bold', sans-serif;
-  text-transform: capitalize;
-  text-decoration: none;
-  margin-bottom: 0px;
-  color: #6688cc; }
+	font-size: 40px;
+	font-weight: normal;
+	line-height: 46px;
+	font-family: 'Futura W01 Bold', sans-serif;
+	text-transform: capitalize;
+	text-decoration: none;
+	margin-bottom: 0px;
+	color: #68c;
+}
 
 h2 {
-  color: black;
-  font-family: 'DINNextW01-CondensedBol', sans-serif;
-  font-weight: normal;
-  text-indent: 0px;
-  margin-top: 15px;
-  font-size: 32px;
-  font-style: normal;
-  line-height: 36px;
-  text-transform: uppercase;
-  width: 100%;
-  border-bottom: 1px solid #555555; }
-
-.view-grouping-header,
+	color: #000;
+	font-family: 'DINNextW01-CondensedBol', sans-serif;
+	font-weight: normal;
+	text-indent: 0px;
+	margin-top: 15px;
+	font-size: 32px;
+	font-style: normal;
+	line-height: 36px;
+	text-transform: uppercase;
+	width: 100%;
+	border-bottom: 1px solid #555;
+}
+	
+h3,
 .views-field-title,
-h3 {
-  color: #555555;
-  font-style: normal;
-  font-weight: normal;
-  font-family: 'DINNextW01-CondensedBol';
-  text-transform: uppercase;
-  font-size: 26px;
-  line-height: 24px;
-  margin: 10px 0px 10px 0px; }
+.view-grouping-header { 
+	color: #555;
+	font-style: normal;
+	font-weight: normal;
+	font-family: 'DINNextW01-CondensedBol', sans-serif;
+	text-transform: uppercase;
+	font-size: 26px;
+	line-height: 24px;
+	margin: 10px 0px 10px 0px;
 
-.view-grouping-header a,
-.views-field-title a,
-h3 a {
-  color: #555555;
-  text-decoration: none; }
-
-.view-grouping-header a:hover,
-.views-field-title a:hover,
-h3 a:hover {
-  color: black;
-  text-decoration: underline; }
-
-h4,
-lh {
-  font-family: 'DINNextW01-CondensedReg';
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 20px;
-  color: #333333;
-  padding: 4px 0px;
-  margin-bottom: 4px;
-  border-bottom: 0px dashed black; }
-
+}
+h3 a, .views-field-title a, .view-grouping-header a { 
+	color: #555;
+	text-decoration: none;
+}
+h3 a:hover, .views-field-title a:hover, .view-grouping-header a:hover { 
+	color: #000;
+	text-decoration: underline;
+	}
+h4, lh {
+	font-family: 'DINNextW01-CondensedReg', sans-serif;
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 20px;
+	color: #333;
+	padding: 4px 0px;
+	margin-bottom: 4px;
+	border-bottom: 0px dashed #000;
+}
 div.block {
-  overflow: hidden; }
+	overflow:hidden;
+
+}
 
 ul {
-  margin: 0;
-  padding: 0; }
+	margin:0;
+	padding:0;
+}
+ul li {
+	padding-left: 1em;
+}
+ul.inline li {
+	padding: 0;
+}
 
 p {
-  font-family: Georgia, serif;
-  font-size: 16px;
-  color: #333333; }
-
+	font-family: Georgia, serif;
+	font-size: 16px;
+	color: #333;
+}
 a {
-  text-decoration: underline;
-  color: black; }
+	text-decoration: underline;
+}
+a:hover {
+	text-decoration: underline;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+ul li, .item-list ul li {
+	/*margin:0px;*/
 
-.item-list ul li,
-ul li {
-  margin: 0px; }
-
-a.image.wrap {
-  display: block;
-  overflow: hidden; }
-
-a.image.wrap.h img {
-  height: 100%;
-  width: auto; }
-
-a.image.wrap.w img {
-  width: 100%;
-  height: auto; }
-
+}
+h3#return-link img {
+	margin-top: 2px;
+	margin-right: 5px;
+}
+h3#return-link a  {
+	font-size: 18px;
+	line-height: 16px;
+	color: #ccc;
+}
+h3#return-link a:hover {
+	color: #777;
+}
+.system.header .list.grid li img {
+	width: 100%;
+	mar
+	z-index: 0;
+	opacity: .5;
+}
 .grid.windows {
-  background-color: white; }
+	background-color: #fff;
+}
 
 div.nav.list {
-  margin-bottom: 20px;
-  margin-top: 0px;
-  position: relative;
-  height: 65px;
-  text-transform: uppercase;
-  width: 100%;
-  z-index: 12;
-  overflow: visible; }
-
+	margin-bottom: 20px;
+	margin-top: 0px;
+	position:relative;
+	height: 65px;
+	text-transform: uppercase;
+	width: 100%;
+	z-index: 12;
+	overflow: visible;
+}
 .nav.list ul {
-  float: left;
-  margin-top: 0px;
-  padding-left: 0px;
-  position: relative;
-  visibility: visible;
-  overflow: visible; }
+	float:left;
+	width: 100%;
+	margin-top: 0px;
+	padding-left: 0px;
+	position:relative;
+	visibility: visible;
+	overflow: visible;
+}
 
 .nav.list ul div {
-  width: auto;
-  margin: 0px auto; }
-
+	width: auto;
+	margin: 0px auto;
+}
 .nav.list li {
-  float: left;
-  position: static;
-  font-size: 22px;
-  line-height: 24px;
-  letter-spacing: 0px;
-  text-decoration: none;
-  list-style: none;
-  display: block;
-  font-family: DINNextW01-CondensedReg, sans-serif;
-  font-style: normal;
-  overflow: visible;
-  padding: 10px 10px 0px 0px;
-  text-transform: uppercase; }
-
+	float: left;
+	position:static;
+	font-size: 22px;
+	line-height: 24px;
+	letter-spacing: 0px;
+	text-decoration: none; 
+	list-style: none;
+	display: block;
+	font-family: DINNextW01-CondensedReg, sans-serif;
+	font-style: normal;
+	overflow: visible;
+	padding: 10px 10px 0px 0px;
+	text-transform: uppercase;
+}
 .nav li a {
-  font-weight: 300;
-  display: inline;
-  text-decoration: none;
-  min-height: 20px;
-  margin-bottom: 7px;
-  margin-right: 7px; }
-
+	font-weight: 300;
+	display:inline;
+	text-decoration: none;
+	min-height: 20px;
+	margin-bottom: 7px;
+	margin-right: 7px;
+}
 .nav li a:hover {
-  text-decoration: underline; }
-
-/*
- * hide sub-menus unless the section is active
- */
-.nav.list li ul {
-  visibility: hidden;
-  height: 0;
-  width: 0;
-  overflow: hidden; }
-
-/*
- * show sub-menu on active or hover
- */
+	text-decoration: underline;
+}
+/* hide sub-menus unless the section is active*/
+.nav.list li ul{
+	position:absolute;
+	left: 0;
+	right: 0;
+	visibility: hidden;
+	height: 0;
+	width: 0;
+	overflow: hidden;
+}
+/* TO-DO: don't do rollovers on handheld devices */
+	
+/* show sub-menu on active or hover */
 .nav.list li.active-trail ul,
-.nav.list li:hover ul {
-  top: 40px;
-  left: 0px;
-  margin-left: 10px;
-  width: 100%;
-  position: absolute;
-  visibility: visible;
-  overflow: visible; }
+.nav.list li:hover ul,
+.nav.list li ul:hover
+{
+	left:0px;
+	background-color: #fff;
+	margin-top: 0px;
+	padding-top: 5px;
+	margin-left: 10px;
+	width: 2000px;
+	height: 1.5em;
+	position: absolute;
+	visibility: visible;
+	overflow: visible;
+	z-index: 11;
+}
 
-.nav.list li ul li {
-  float: left;
-  font-family: 'DINNextW01-CondensedUlt';
-  font-size: 20px;
-  display: inline;
-  padding-top: 0px;
-  margin-left: 0px;
-  background-color: white;
-  z-index: 10; }
+.nav.list li:hover ul,
+.nav.list li ul:hover {	
+	z-index: 12;	
+}
 
-/*
- * only bold active sub menus; color connects to top implicitly
- */
+.nav.list li ul li{
+	float: left;
+	font-family:'DINNextW01-CondensedReg',sans-serif;
+	font-size: 18px;
+	display: inline;
+	padding-top: 0px;
+	margin-left: 0px;
+	background-color: #fff;
+	z-index: 10;
+}
+/* only bold active sub menus; color connects to top implicitly */
 .nav.list li ul li.active-trail {
-  text-decoration: underline; }
+	text-decoration: underline;
+}
 
 /*
- * li.nav.list.item ul li.nav.list.item:after {
- * color: #ccc;
- * content:"|";
- * }
- */
+li.nav.list.item ul li.nav.list.item:after {
+	color: #ccc;
+	content:"|";
+}*/
 .nav.list li ul li.nav.list.item:last-child:after {
-  content: none; }
+	content:none;
+}
 
-.nav.list li:nth-child(1) a,
-.nav.list li:nth-child(1) ul li a {
-  color: #6688cc; }
+.nav.list li:nth-child(1) a, .nav.list li:nth-child(1) ul li a{
+	color: #68c;
+}
+.nav.list li:nth-child(2) a, .nav.list li:nth-child(2) ul li a{
+	color: #c080bb;
+}
+.nav.list li:nth-child(3) a, .nav.list li:nth-child(3) ul li a{
+	color: #b0cc70;
+}
+.nav.list li:nth-child(4) a, .nav.list li:nth-child(4) ul li a{
+	color: #e58586;
+}
+.nav.list li:nth-child(5) a, .nav.list li:nth-child(5) ul li a{
+	color: #ddc040;
+}
 
-.nav.list li:nth-child(2) a,
-.nav.list li:nth-child(2) ul li a {
-  color: #b080cc; }
-
-.nav.list li:nth-child(3) a,
-.nav.list li:nth-child(3) ul li a {
-  color: #b0cc80; }
-
-.nav.list li:nth-child(4) a,
-.nav.list li:nth-child(4) ul li a {
-  color: #dda040; }
 
 .list.grid li {
-  display: inline-block;
-  overflow: visible;
-  vertical-align: top; }
-
+	position: relative;
+	display:inline-block;
+	overflow: visible;
+	vertical-align: top;
+	width: 30%;
+	padding-left: 0px;
+	min-height: 100px;
+	min-width: 150px;
+}
+.list.grid li h2,
 .list.grid li .views-field-title,
-.list.grid li h2 {
-  position: relative;
-  background-color: #f5f5f9;
-  opacity: 0.8;
-  width: 100%;
-  padding: 0.3em 0;
-  margin-bottom: 0px;
-  display: block;
-  z-index: 11; }
+.list.grid li .views-field-view-user {
+	position: relative; 
+	top:0;
+	background-color: #f5f5f9;
+	opacity: .7;
+	width: 100%;
+	padding: .3em 0 .2em 0;
+	margin: 0;
+	display:block;
+	z-index: 11;
+}
+.list.grid.view-studio-areas li .views-field-title {
+	position: absolute;
+	top: auto;
+	bottom: 0;
+}
+/* in view grids, the best Views can do is print a link inside the image div
+ * so we need to stretch that div across the image to make it clickable. */
+.list li .views-field .node-image > a {
+	position: absolute;
+	top:0;
+	left:0;
+	display: block;
+	width: 100%;	
+	height: 100%; 
+	z-index: 7;
+}
+.view-people li{
+	min-height: 126px;
+
+}
+.list.grid li .views-field-view-user {
+	position: absolute;
+	top: auto;
+	bottom: 0;
+	padding: .2em .5em .4em .5em;
+	opacity: .9;
+	font-weight: bold;
+	}
+
 
 .list.grid li img {
-  position: relative;
-  top: 0px;
-  margin-bottom: -3em;
-  z-index: 2; }
-
-.list.grid.groupings li {
-  position: relative; }
-
-.list.grid.groupings li img {
-  top: auto;
-  position: static;
-  margin-bottom: 10px; }
-
-.list.grid li img {
-  width: 100%;
-  height: auto; }
-
+	max-width: 100%;
+	height: auto;
+	position: relative;
+	top: 0px;
+	z-index: 2;
+}
+.view-people .list.grid li {
+	width: 15%;
+	min-width: 100px;
+	min-height: 70px;
+}
+list.groupings .views-field li {
+	margin-left: 0px;
+	margin-right: 10px;
+}
+.list.groupings ul li ul li {
+	width: 30%;
+	display: inline-block;
+	vertical-align: top;
+}
+.list.groupings li img {
+	top: auto;
+	position: static;
+	margin-bottom: 10px;
+	width: 100%;
+	height: auto;
+}
 .list.grid li p {
-  margin-top: 5px; }
-
+	margin-top: 5px;	
+}
 .list.grid li a.image.wrap {
-  display: block;
-  width: 100%;
-  height: 100%; }
-
+	display: block;
+	width: 100%;
+	height: 100%;
+}
 .list.grid li a span {
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 14px;
-  padding-top: 2px;
-  background-color: #333333;
-  opacity: 0.7;
-  color: white;
-  font-size: 20px;
-  line-height: 18px;
-  text-align: right;
-  bottom: 0px;
-  left: 0px; }
+	position: absolute;
+	display:block;
+	width: 100%;
+	height: 14px;
+	padding-top: 2px;
+	background-color: #333;
+	opacity: .7;
+	color: #fff;
+	font-size: 20px;
+	line-height: 18px;
+	text-align: right;
+	bottom: 0px;
+	left:0px;
+}
+/******** 2-col layout enhancement *********/
+.ds-2col .group-left > div, 
+.ds-2col-fluid .group-left > div {
+	margin-right: 20px;
+}
+.ds-2col .group-right > div,
+.ds-2col-fluid .group-right > div,
+.ds-2col-stacked-fluid .group-right > div {
+	padding-top: 10px;
+}
+/* in a view, it's tough to make first and last names
+ * show together, so we'll do that here */
+.views-field-field-first-name,
+.views-field-field-last-name {
+	font-weight: bold;
+	display: inline-block;
+}
+/*facilities listing is much more usable if whole entry is clickable */
+/*
+.facilities .view-content .list.item {
+	position: relative;
+}
 
+.facilities .views-field-title, .facilities .views-field-title a {
+	position: absolute;
+	top: 0px;
+	display:block;
+	height: 100%;
+	width: 100%;
+	z-index: 33;
+}
+.facilities .views-field-field-description {
+	padding-top: 40px;
+
+}
+				*/
+/* ******USER PROFILES********************************** 
+ * the way drupal handles profiles is enough of a special case that we need 
+ * a lot of specific styles for it. */
+.user-profile div.field-name-field-first-name,
+.user-profile div.field-name-field-last-name {
+	font-size: 22px;
+	margin-right: .4em;
+	font-weight: bold;
+	display: inline-block;
+}
+.user-profile div.field-name-field-job-title {
+	margin-bottom: 10px;
+}
+/*********News Articles********************/
+.view-news .group-left {
+	height: 100%;
+	float: right;
+	width: auto;
+	margin-top: 2em;
+}
+.view-news .group-right {
+}
+
+/*********Carousel/Slideshow Widget********/
+.carousel {
+	position: relative;
+	/*background-color: #c0c0c4;*/
+	margin: 0 0 20px 0;
+}
+.carousel div {
+	height: 100%;
+	width: auto;
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+	}
+.carousel > div {
+	width: 100%;
+	margin: 0px auto;
+}
+.carousel .content .field-items {
+	width: 100%;
+}
+.carousel .field-name-field-caption {
+	padding: 10px 100px 10px 100px;
+}
+.carousel .content .field-name-field-caption * {
+	height: auto;
+	width: 100%;
+}
+.carousel img {
+	display:block;
+	width: auto;
+	max-height: 100%;
+	margin: 0px auto;
+}
+.carousel .field-collection-view-links {
+	width: auto;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-color: #f5f5f9;
+	opacity: .7;
+	z-index: 22;
+}
+.field-collection-container {
+	border-bottom: 0px solid #000;
+}
+.carousel-button {
+	position: absolute;
+	font-family: 'Futura W01 Bold', sans-serif;
+	font-size: 70px;
+	width: auto;
+	height: .7em;
+	padding: 5px;
+	z-index: 25;
+	cursor: pointer;
+}
+.carousel-button.prev {
+	left:0;	
+}
+.carousel-button.next {
+	right: 0;
+}
+/*********Search Form**********************/ 
 .container div.search {
-  background-color: white;
-  margin-right: 0px; }
-
+	background-color: #fff;
+	margin-right: 0px;
+}
 .search div#block-search-form {
-  float: right;
-  background-color: white;
-  margin: 0px 10px; }
-
+	float: right;
+	background-color: #fff;
+	margin: 10px 0px;
+	min-width: 200px;
+}
+.element-invisible {
+	height: 0;
+	margin: 0;
+}
 form input[type=text] {
-  border: 1px #999999 solid;
-  box-shadow: 0px 0px 0px white;
-  height: 20px;
-  padding: 0px;
-  margin: 0px 5px; }
+	border: 1px #999 solid;
+	height: 20px;
+	padding:0px;
+	margin:0px 5px;
+	display:inline;
 
-#block-search-form form input[type=submit] {
-  border: 0px;
-  background: url(../images/wc-art-glyphs-small.svg) no-repeat center;
-  color: transparent;
-  width: 20px;
-  height: 20px;
-  display: hidden; }
-
+}
+#block-search-form form input[type=submit]{
+	border: 0px;
+	background: url(../images/search.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	padding: 0px;
+	margin: 0px 0px 5px 0;
+	font-size:0px;
+	width: 20px;
+	height: 30px;
+}
+#block-search-form .form-item {
+	vertical-align: top;
+	margin-top: 0px;
+	margin-right: 5%;
+	width: 75%;
+	display: inline-block;
+}
+#block-search-form .form-actions {
+	display: inline-block;
+	width: 18%;
+}
 .slider.item > * {
-  margin-left: 0px; }
-
+	margin-left: 0px;
+}
 div.system.header {
-  margin: 20px 0px 0px 0px; }
-
+	margin: 10px 0px 0px 0px;
+}
 div.container div.section {
-  background-color: #f5f5f9;
-  padding: 10px;
-  margin-left: 0px; }
+	background-color: #f5f5f9;
+	padding: 10px;
+	margin-left: 0px;
+}
 
-
+div.section > * {
+}
 .inside {
-  padding: 10px; }
-
+	padding: 10px;
+}
 div header {
-  font-size: 18px;
-  margin: 10px 5px 10px 0; }
-
-.slider.item p {
-  margin: 0 10px; }
-
-.slider.item p:after {
-  content: "..."; }
-
-.slider.item a.image.wrap {
-  height: 200px;
-  float: left;
-  margin-right: 20px; }
+	font-size: 18px;
+	margin: 10px 5px 10px 0;
+}
 
 
-/*
- * div.blockquote p:first-letter {
- * display: block;
- * float: left;
- * font-size: 60px;
- * line-height: 55px;
- * padding-bottom: 0px;
- * padding-right: 7px;
- * margin:0;
- * color: #6088b0
- * }
- */
-.arrow {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  float: left;
-  background-image: url("../images/arrows.png"); }
+div.drop-cap p:first-child:first-letter {
+	display: block;
+	float: left;
+	font-size: 60px;
+	line-height: 50px;
+	padding-bottom: 0px;
+	padding-right: 7px;
+	margin:0;
+}
 
-div.arrow.left {
-  background-position: 0 0; }
+div.footer {
+	background-color: #fff;
+	color: #999;
+	font-size: 14px;
+	margin: 20px 0;
+	padding: 5px 0;
+	/*border-top: 1px solid #ccc;*/
+}
+div.footer a {
+	color: #777;
+}
+div.footer > div {
+	margin: 0px auto;
+	width: 32em;
+}
+div.footer > div span {
+	margin-right: 20px;
+}
 
-div.arrow.right {
-  background-position: 20px 0px; }
+div#block-user-login h2 {
+	font-size: 14px;
+	font-family: Georgia, serif;
+	text-decoration: underline;
+	width: auto;
+	border-width: 0px;
+	line-height: auto;
+	text-transform: none;
+	display: inline;
+}
+div#block-user-login h2:hover {
+	cursor: pointer;
+}
+/**************** Fix for wrapped columns at small widths **********/
+@media only screen and (max-width: 767px){
+				.container .one.column,
+				.container .one.columns,
+				.container .two.columns,
+				.container .three.columns,
+				.container .four.columns,
+				.container .five.columns,
+				.container .six.columns,
+				.container .seven.columns,
+				.container .eight.columns,
+				.container .nine.columns,
+				.container .ten.columns,
+				.container .eleven.columns,
+				.container .twelve.columns,
+				.container .thirteen.columns,
+				.container .fourteen.columns {
+						width: 280px;
+				}
+}
+@media only screen and (max-width: 767px) and (min-width: 480px){
+				.container .one.column,
+				.container .one.columns,
+				.container .two.columns,
+				.container .three.columns,
+				.container .four.columns,
+				.container .five.columns,
+				.container .six.columns,
+				.container .seven.columns,
+				.container .eight.columns,
+				.container .nine.columns,
+				.container .ten.columns,
+				.container .eleven.columns,
+				.container .twelve.columns,
+				.container .thirteen.columns,
+				.container .fourteen.columns {
+						width: 400px;
+				}
+}
 
-div.footer > span {
-  margin: 0px auto; }
 
-div.footer span span {
-  color: #666666;
-  margin-right: 10px; }
+/**************** IE8 hacks (not many!) ************/
+@media \0screen {img { width: auto }} /* Prevent height distortion in IE8. */
 
-/*
- * Drupal block stuff
- */
 
+/****************** for handheld *******************/
+@media only screen and (max-device-width: 480px) {
+	.body {
+		width: 100%;
+		overflow: hidden;
+	}
+	div.nav.list {
+		height: 130px;
+		font-size: 14px;
+		padding-top: 20px;
+		padding-left: 10px;
+	}
+	.nav.list ul li {
+		line-height: .7em; 
+		float: none;
+		display: block;
+	}
+	.nav.list li.active-trail ul,
+	.nav.list li:hover ul,
+	.nav.list li ul:hover {
+		top: 0px;
+		left: 45%;
+		width: 100%;
+		height: 100%;
+	}
+	.nav.list li ul li {
+		line-height: 26px;
+		float: none;
+		display: block;
+	}
+	.search div#block-search-form {
+		margin-top: 2em;
+		text-align: left;
+		float: left;
+		display: hidden;
+		height: 0px;
+	}
+	.sidebar {
+		display: hidden;
+		height: 0px;
+	}
+}
