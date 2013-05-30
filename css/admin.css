@@ -1,0 +1,57 @@
+/* Action links are outside block-system wrapper and look
+ * terrible if not styled separately. 
+ */
+ul.action-links {
+	font-family: Arial, sans-serif;
+	font-size: 18px;
+	text-decoration: none;
+	list-style: none;
+	margin: 5px 0;
+	padding: 10px;
+	border: 2px groove #ccc;
+	background-color: #fefeff;
+}
+ul.action-links a {
+	text-decoration: none;
+	}
+ul.action-links a:hover {
+	text-decoration: underline;
+	}
+
+.block-system dl dt {
+	margin-bottom; 20px;
+	font-size: 22px; 
+	font-weight: 700;
+	}
+/* Make a grid of entity reference check-offs */
+div.field-type-entityreference div.form-type-checkboxes div.form-item {
+  width: 21%;
+	min-width: 180px;
+	min-height: 200px;
+  margin: 2px;
+	padding: 3px;
+  display: inline-block;
+	vertical-align: top;
+	border: 1px solid #555;
+ }
+div.field-type-entityreference div.form-type-checkboxes 
+	div.form-item * {
+	cursor: pointer;
+	}
+
+div.field-type-entityreference div.form-type-checkboxes div.form-item
+	.views-field-title {
+		font-family: Georgia, sans-serif;
+		line-height: 18px;
+		font-size: 14px;
+		text-transform: none;
+	}
+div.field-type-entityreference div.form-type-checkboxes div.form-item
+	input.form-checkbox {
+		width: 100%;	
+		height: 20px;
+
+	}
+table tr td {
+	padding-right: 10px;
+	}
